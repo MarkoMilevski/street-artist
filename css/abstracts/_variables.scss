@@ -12,7 +12,8 @@ $font-size-base: rem-calc(16);
 $font-size-base: rem-calc(18);
 
 $heading-size-small: rem-calc(24);
-$heading-size-large: rem-calc(30);
+$heading-size-big: rem-calc(30);
+$heading-size-large: rem-calc(40);
 
 $line-height-base: 1.5;
 $line-height-small: 1.25;
@@ -25,6 +26,7 @@ $gutter-base: rem-calc(30);
 // Colors
 $text-color-base: #5a5a5a;
 $text-color-secondary: #b9b9b9;
+$text-color-white: #f8f8f8;
 
 $color-primary-default: #a16a5e;
 $color-primary-contrast: #d44c2e;

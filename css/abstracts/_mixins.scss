@@ -1,0 +1,9 @@
+@use "./variables" as styles;
+@use "sass:math";
+
+%wrap {
+  @media screen and (max-width: 420px) {
+    width: 90%;
+    margin: 0 auto;
+  }
+}

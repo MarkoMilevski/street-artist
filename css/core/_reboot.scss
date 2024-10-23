@@ -1,9 +1,17 @@
+@use "../abstracts/variables" as style;
+
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
+  font-family: style.$font-family-base;
+}
+
+h1,
+h2 {
+  font-family: style.$heading-family-base;
 }
 
 h1,

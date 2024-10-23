@@ -6,6 +6,12 @@
 
 body {
   margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+h1,
+h2 {
+  font-family: "Reenie Beanie", cursive;
 }
 
 h1,
@@ -27,30 +33,30 @@ img {
   .heading {
     text-align: center;
     padding: 0.9375rem;
-    font-family: "Reenie Beanie", cursive;
     font-size: 2.5rem;
     color: #a16a5e;
     font-weight: 500;
     margin-bottom: 1px;
   }
-  .navBar {
-    background-color: #fcebd5;
-    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.2509803922);
-  }
-  .landing-section {
+  #landingPage {
     height: 100vh;
     background-color: #fcebd5;
   }
-  .landing-section .logo {
+  #landingPage .navBar {
+    background-color: #fcebd5;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.2509803922);
+  }
+  #landingPage .landing-section .logo {
     text-align: center;
     padding-top: 1.875rem;
   }
-  .landing-section .join-section {
+  #landingPage .landing-section .join-section {
     margin-top: 3.75rem;
   }
-  .landing-section .join-section .join-as-artist {
+  #landingPage .landing-section .join-section .join-as-artist {
     margin: 0 auto;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%);
     width: 250px;
     height: 250px;
     background-color: #edd5bb;
@@ -58,37 +64,184 @@ img {
     position: relative;
     z-index: 2;
   }
-  .landing-section .join-section .join-as-artist h1 {
+  #landingPage .landing-section .join-section .join-as-artist h2 {
     font-family: "Reenie Beanie", cursive;
     text-align: center;
     font-size: 2.5rem;
     padding-top: 3.75rem;
     color: #a16a5e;
   }
-  .landing-section .join-section .join-as-artist:hover {
+  #landingPage .landing-section .join-section .join-as-artist:hover {
     transform: scale(1.1);
   }
-  .landing-section .join-section .join-as-visitor {
+  #landingPage .landing-section .join-section .join-as-visitor {
+    transition: transform 300ms ease-out;
     background-color: #e09686;
     width: 250px;
     height: 250px;
-    clip-path: polygon(0 0, 100% 50%, 100% 100%, 0 100%);
+    -webkit-clip-path: polygon(0 0, 100% 50%, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 50%, 100% 100%, 0 100%);
     left: 50%;
     position: absolute;
     transform: translate(-50%, -50%);
     box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.8941176471);
   }
-  .landing-section .join-section .join-as-visitor h1 {
+  #landingPage .landing-section .join-section .join-as-visitor h2 {
     font-family: "Reenie Beanie", cursive;
     text-align: center;
     font-size: 2.5rem;
     padding-top: 9.375rem;
     color: #fcebd5;
   }
-  .landing-section .join-section .join-as-visitor:hover {
+  #landingPage .landing-section .join-section .join-as-visitor:hover {
     z-index: 2;
     transform: translate(-50%, -50%) scale(1.1);
   }
 }
-
-/*# sourceMappingURL=main.css.map */
+@media screen and (max-width: 600px) {
+  #visitorHomePage {
+    height: 100vh;
+    background-color: #edd5bb;
+  }
+  #visitorHomePage .nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fcebd5;
+  }
+  #visitorHomePage .nav-bar h1 {
+    padding: 0;
+    font-size: 1.875rem;
+  }
+  #visitorHomePage .nav-bar img {
+    width: 100px;
+  }
+  #visitorHomePage .nav {
+    display: flex;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 600px) and (max-width: 600px) {
+  #visitorHomePage .nav {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 600px) {
+  #visitorHomePage .fa-gavel {
+    color: #a16a5e;
+    font-size: 2.5rem;
+    padding-right: 0.9375rem;
+  }
+  #visitorHomePage .masterpiece-section {
+    background: url("../../assets/bricks.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #f5e3cb;
+  }
+  #visitorHomePage .masterpiece-section h2 {
+    flex-basis: 20%;
+    font-size: 1.875rem;
+    font-family: "Roboto", sans-serif;
+    color: #a16a5e;
+    margin: 0;
+  }
+  #visitorHomePage .masterpiece-section .primary-button {
+    padding: 0.625rem;
+    background-color: #a16a5e;
+    border: none;
+    color: #fcebd5;
+    font-weight: bold;
+    border-radius: 2px;
+    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.2509803922);
+  }
+}
+@keyframes slideLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+@keyframes slideRight {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+#visitorHomePage .gallery {
+  overflow: hidden;
+  white-space: nowrap;
+  margin-top: 1.875rem;
+}
+#visitorHomePage .gallery img {
+  height: 120px;
+  margin: 0 0.625rem;
+}
+#visitorHomePage .gallery .gallery-slide {
+  animation: 8s slideLeft infinite linear;
+}
+#visitorHomePage .gallery .gallery-slide-2 {
+  animation: 8s slideRight infinite linear;
+}
+#visitorHomePage #carousel {
+  height: 30vh;
+}
+@media screen and (max-width: 600px) {
+  #visitorHomePage #carousel .carousel-inner {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+#visitorHomePage #carousel .active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3.75rem;
+}
+#visitorHomePage #carousel .box {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  padding: 1.875rem 0.9375rem;
+  padding-bottom: 0.46875rem;
+  background-color: #e09686;
+  color: #f8f8f8;
+  text-align: center;
+  font-weight: bold;
+}
+#visitorHomePage #carousel .box .avatar {
+  position: absolute;
+  left: 50%;
+  bottom: 100%;
+  transform: translate(-50%, 50%);
+}
+#visitorHomePage #carousel .box .avatar img {
+  width: 50px;
+  height: 50px;
+  line-height: 72px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #a16a5e;
+}
+#visitorHomePage #carousel p {
+  font-size: 0.875rem;
+}
+#visitorHomePage #carousel .text {
+  color: #a16a5e;
+  font-weight: bold;
+}
+#visitorHomePage #carousel .line {
+  border: 2px solid #a16a5e;
+  rotate: -90deg;
+  width: 150px;
+  z-index: 555;
+}/*# sourceMappingURL=main.css.map */

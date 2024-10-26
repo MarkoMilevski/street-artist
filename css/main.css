@@ -55,8 +55,7 @@ img {
   }
   #landingPage .landing-section .join-section .join-as-artist {
     margin: 0 auto;
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%);
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%);
     width: 250px;
     height: 250px;
     background-color: #edd5bb;
@@ -79,8 +78,7 @@ img {
     background-color: #e09686;
     width: 250px;
     height: 250px;
-    -webkit-clip-path: polygon(0 0, 100% 50%, 100% 100%, 0 100%);
-            clip-path: polygon(0 0, 100% 50%, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 50%, 100% 100%, 0 100%);
     left: 50%;
     position: absolute;
     transform: translate(-50%, -50%);
@@ -98,7 +96,7 @@ img {
     transform: translate(-50%, -50%) scale(1.1);
   }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 425px) {
   #visitorHomePage {
     height: 100vh;
     background-color: #edd5bb;
@@ -121,13 +119,13 @@ img {
     align-items: center;
   }
 }
-@media screen and (max-width: 600px) and (max-width: 600px) {
+@media screen and (max-width: 425px) and (max-width: 600px) {
   #visitorHomePage .nav {
     width: 90%;
     margin: 0 auto;
   }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 425px) {
   #visitorHomePage .fa-gavel {
     color: #a16a5e;
     font-size: 2.5rem;
@@ -191,57 +189,60 @@ img {
 #visitorHomePage .gallery .gallery-slide-2 {
   animation: 8s slideRight infinite linear;
 }
-#visitorHomePage #carousel {
-  height: 30vh;
+#visitorHomePage #carousel .carousel-container {
+  height: 260px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
 }
-@media screen and (max-width: 600px) {
-  #visitorHomePage #carousel .carousel-inner {
-    width: 90%;
-    margin: 0 auto;
-  }
+#visitorHomePage #carousel .carousel-item--left {
+  display: flex;
+  border-right: solid 2px #a16a5e;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 50%;
+  height: 200px;
 }
-#visitorHomePage #carousel .active {
+#visitorHomePage #carousel .carousel-item--left .carousel-container--left {
+  width: 100px;
+  height: 120px;
+  background-color: #a16a5e;
+  color: #fcebd5;
+}
+#visitorHomePage #carousel .carousel-item--right {
+  text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 3.75rem;
+  width: 50%;
+  height: 200px;
 }
-#visitorHomePage #carousel .box {
-  position: relative;
-  width: 160px;
-  height: 160px;
-  padding: 1.875rem 0.9375rem;
-  padding-bottom: 0.46875rem;
-  background-color: #e09686;
-  color: #f8f8f8;
-  text-align: center;
-  font-weight: bold;
+#visitorHomePage #carousel .carousel-item--right .carousel-container--right {
+  width: 100px;
+  color: #a16a5e;
+  height: 120px;
 }
-#visitorHomePage #carousel .box .avatar {
-  position: absolute;
-  left: 50%;
-  bottom: 100%;
-  transform: translate(-50%, 50%);
-}
-#visitorHomePage #carousel .box .avatar img {
-  width: 50px;
-  height: 50px;
-  line-height: 72px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 50%;
-  border: 4px solid #a16a5e;
+#visitorHomePage #carousel img {
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  margin-top: -30px;
+  border: solid 2px #a16a5e;
+  object-fit: cover;
 }
 #visitorHomePage #carousel p {
-  font-size: 0.875rem;
+  font-size: 10px;
+  text-align: center;
 }
-#visitorHomePage #carousel .text {
+#visitorHomePage #carousel .second-slide .carousel-container--right {
+  background-color: #a16a5e;
+  color: #fcebd5;
+}
+#visitorHomePage #carousel .second-slide .carousel-container--left {
+  background-color: transparent;
   color: #a16a5e;
-  font-weight: bold;
 }
-#visitorHomePage #carousel .line {
-  border: 2px solid #a16a5e;
-  rotate: -90deg;
-  width: 150px;
-  z-index: 555;
-}/*# sourceMappingURL=main.css.map */
+
+/*# sourceMappingURL=main.css.map */

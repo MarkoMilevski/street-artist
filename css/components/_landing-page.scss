@@ -30,11 +30,11 @@
         margin-top: style.$gutter-base * 2;
 
         .join-as-artist {
+          padding: style.$gutter-base;
           h2 {
             font-family: style.$heading-family-base;
             text-align: center;
             font-size: style.$heading-size-large;
-            padding-top: style.$gutter-base * 2;
             color: style.$color-primary-default;
           }
           margin: 0 auto;

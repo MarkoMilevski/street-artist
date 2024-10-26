@@ -1,10 +1,29 @@
-/* Error: Can't find stylesheet to import.
- *   ,
- * 2 | @forward "./visitor-home-page";
- *   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- *   '
- *   components\_index.scss 2:1  @use
- *   main.scss 3:1               root stylesheet */
+@import url("https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+h1,
+h2 {
+  font-family: "Reenie Beanie", cursive;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+  margin-top: 0;
+}
 
 img {
   max-width: 100%;
@@ -35,8 +54,10 @@ img {
     margin-top: 3.75rem;
   }
   #landingPage .landing-section .join-section .join-as-artist {
+    padding: 1.875rem;
     margin: 0 auto;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%);
     width: 250px;
     height: 250px;
     background-color: #edd5bb;
@@ -48,7 +69,6 @@ img {
     font-family: "Reenie Beanie", cursive;
     text-align: center;
     font-size: 2.5rem;
-    padding-top: 3.75rem;
     color: #a16a5e;
   }
   #landingPage .landing-section .join-section .join-as-artist:hover {
@@ -59,7 +79,8 @@ img {
     background-color: #e09686;
     width: 250px;
     height: 250px;
-    clip-path: polygon(0 0, 100% 50%, 100% 100%, 0 100%);
+    -webkit-clip-path: polygon(0 0, 100% 50%, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 50%, 100% 100%, 0 100%);
     left: 50%;
     position: absolute;
     transform: translate(-50%, -50%);
@@ -100,7 +121,7 @@ img {
     align-items: center;
   }
 }
-@media screen and (max-width: 425px) and (max-width: 600px) {
+@media screen and (max-width: 425px) and (max-width: 420px) {
   #visitorHomePage .nav {
     width: 90%;
     margin: 0 auto;
@@ -211,7 +232,8 @@ img {
   border-radius: 30px;
   margin-top: -30px;
   border: solid 2px #a16a5e;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 #visitorHomePage #carousel p {
   font-size: 10px;
@@ -226,4 +248,270 @@ img {
   color: #a16a5e;
 }
 
-/*# sourceMappingURL=main.css.map */
+.button-default {
+  background-color: #a16a5e;
+  border-radius: 2px;
+  border: none;
+  color: #fcebd5;
+  padding: 0.46875rem 0.9375rem;
+  font-weight: bold;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
+}
+
+.button-light {
+  background-color: #fcebd5;
+  border-radius: 2px;
+  border: none;
+  color: #a16a5e;
+  padding: 0.46875rem 0.9375rem;
+  font-weight: bold;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
+}
+
+.button-gray {
+  background-color: #e5e5e5;
+  border-radius: 2px;
+  border: none;
+  color: #5a5a5a;
+  padding: 0.46875rem 0.9375rem;
+  font-weight: bold;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
+}
+
+.button-blue {
+  background-color: #1b59ac;
+  border-radius: 2px;
+  border: none;
+  color: #f8f8f8;
+  padding: 0.46875rem 0.9375rem;
+  font-weight: bold;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
+}
+
+.button-contrast {
+  background-color: #d44c2e;
+  border-radius: 2px;
+  border: none;
+  color: #fcebd5;
+  padding: 0.46875rem 0.9375rem;
+  font-weight: bold;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
+}
+
+.button-green {
+  background-color: #1bac6f;
+  border-radius: 2px;
+  border: none;
+  color: #f8f8f8;
+  padding: 0.46875rem 0.9375rem;
+  font-weight: bold;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
+}
+
+.nav-bar {
+  background-color: #fcebd5;
+  height: 70px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
+}
+.nav-bar img {
+  width: 100px;
+  height: 100px;
+}
+.nav-bar .nav-bar--heading {
+  font-family: "Reenie Beanie", cursive;
+  color: #a16a5e;
+  text-align: center;
+  margin: 0;
+  font-weight: 500;
+  font-size: 1.875rem;
+}
+
+.landing-page--nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.visitor-homepage--nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.visitor-homepage--nav .hammer {
+  font-size: 1.875rem;
+  color: #a16a5e;
+  margin-left: auto;
+  padding-right: 0.9375rem;
+}
+
+.artist-homepage--nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.artist-homepage--nav .hamburger-icon {
+  font-size: 1.875rem;
+  color: #a16a5e;
+  margin-left: auto;
+  padding-right: 0.9375rem;
+}
+
+.nav-bar--dropdown {
+  width: 100%;
+  height: 200px;
+  background-color: #e09686;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav-bar--dropdown ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+.nav-bar--dropdown ul li {
+  margin: 0 auto;
+}
+.nav-bar--dropdown a {
+  color: #fcebd5;
+  font-size: 3rem;
+  font-weight: 300;
+}
+
+.dropdown--artist {
+  text-align: right;
+}
+.dropdown--artist .dropdown-select--artist {
+  width: 100px;
+  background-color: transparent;
+  color: #a16a5e;
+  border: 1px solid #a16a5e;
+  outline: none;
+}
+.dropdown--artist .dropdown-select--artist .dropdown-option--artist {
+  background-color: #fcebd5;
+}
+.dropdown--artist .dropdown-select--filter {
+  background-color: transparent;
+  color: #fcebd5;
+  border: 1px solid #fcebd5;
+  outline: none;
+}
+.dropdown--artist .dropdown-select--filter .dropdown-option--filter {
+  background-color: #e09686;
+}
+
+@media screen and (max-width: 420px) {
+  .widgets-container {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+.widgets-container .widgets--inner {
+  display: flex;
+  justify-content: space-between;
+}
+.widgets-container .widgets--inner .widget {
+  width: 100%;
+}
+.widgets-container .widgets--inner .widget .total {
+  padding: 0.9375rem 0;
+  text-align: center;
+  background-color: #a16a5e;
+}
+.widgets-container .widgets--inner .widget:not(:last-child) {
+  margin-right: 1.875rem;
+}
+.widgets-container .widgets--inner .widget p {
+  color: #fcebd5;
+}
+.widgets-container .widget--value {
+  color: #fcebd5;
+  font-size: 2.5rem;
+}
+.widgets-container .widget-auction {
+  padding: 0.9375rem 0;
+  text-align: center;
+  margin-top: 1.875rem;
+  background-color: #d44c2e;
+  color: #fcebd5;
+}
+.widgets-container .widget-auction p {
+  margin-bottom: 0;
+}
+
+.card {
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
+  background-color: #fcebd5;
+}
+.card--highlighted {
+  background-color: #a16a5e;
+}
+.card .card-content {
+  padding: 0.9375rem;
+  border-radius: 2px;
+}
+@media screen and (max-width: 420px) {
+  .card .card-content {
+    width: 95%;
+    margin: 0 auto;
+  }
+}
+.card .card-content .card-heading {
+  color: #a16a5e;
+  margin-bottom: 0;
+  font-size: 1.5rem;
+}
+.card .card-content .card-heading--highlighted {
+  color: #fcebd5;
+}
+.card .card-content .description {
+  color: #a16a5e;
+}
+.card .card-content .description--hightlighted {
+  color: #fcebd5;
+}
+.card .card-content .card-content--inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.card .card-content .title {
+  font-size: 18px;
+  color: #a16a5e;
+}
+.card .card-content .title--highlighted {
+  color: #fcebd5;
+}
+.card .card-content .price {
+  background-color: #a16a5e;
+  color: #fcebd5;
+  padding: 7px;
+  border-radius: 3px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
+}
+.card .card-content .price--highlighted {
+  color: #a16a5e;
+  background-color: #fcebd5;
+}
+.card .action-buttons {
+  padding: 0.9375rem 0;
+  background-color: #a16a5e;
+  display: flex;
+  justify-content: space-around;
+}
+
+.add-new-item {
+  padding: 0.9375rem;
+  text-align: center;
+  background-color: #fcebd5;
+}
+.add-new-item span {
+  color: #a16a5e;
+}
+.add-new-item--border {
+  border: 2px dashed #a16a5e;
+  padding: 1.875rem;
+}/*# sourceMappingURL=main.css.map */

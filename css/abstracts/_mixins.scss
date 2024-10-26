@@ -2,8 +2,41 @@
 @use "sass:math";
 
 @mixin wrap($width) {
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 420px) {
     width: $width;
     margin: 0 auto;
   }
+}
+
+@mixin button-style($bg-color, $text-color) {
+  background-color: $bg-color;
+  border-radius: 2px;
+  border: none;
+  color: $text-color;
+  padding: math.div(style.$gutter-base, 4) math.div(style.$gutter-base, 2);
+  font-weight: bold;
+}
+
+@mixin align-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin nav-bar--icon {
+  font-size: style.$heading-size-big;
+  color: style.$color-primary-default;
+  margin-left: auto;
+  padding-right: math.div(style.$gutter-base, 2);
+}
+
+@mixin box-shadow {
+  box-shadow: 0px 4px 4px 0px #00000040;
+}
+
+@mixin dropdown($color) {
+  background-color: transparent;
+  color: $color;
+  border: 1px solid $color;
+  outline: none;
 }

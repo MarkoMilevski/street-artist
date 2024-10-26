@@ -2,9 +2,11 @@
 @use "../abstracts/mixins" as mix;
 @use "sass:math";
 
-.dropdown-menu {
-  text-align: end;
+.dropdown--artist {
+  text-align: right;
+
   .dropdown-select--artist {
+    width: 100px;
     @include mix.dropdown(style.$color-primary-default);
 
     .dropdown-option--artist {

@@ -1,0 +1,22 @@
+@use "../abstracts/variables" as style;
+@use "../abstracts/mixins" as mix;
+@use "sass:math";
+
+.dropdown-menu {
+  text-align: end;
+  .dropdown-select--artist {
+    @include mix.dropdown(style.$color-primary-default);
+
+    .dropdown-option--artist {
+      background-color: style.$background-color-light;
+    }
+  }
+
+  .dropdown-select--filter {
+    @include mix.dropdown(style.$background-color-light);
+
+    .dropdown-option--filter {
+      background-color: style.$background-color-dark;
+    }
+  }
+}

@@ -1,0 +1,42 @@
+@use "../abstracts/variables" as style;
+@use "../abstracts/mixins" as mix;
+@use "sass:math";
+
+.widgets-container {
+  @include mix.wrap(90%);
+  .widgets--inner {
+    display: flex;
+    justify-content: space-between;
+
+    .widget {
+      width: 100%;
+
+      .total {
+        padding: math.div(style.$gutter-base, 2) 0;
+        text-align: center;
+        background-color: style.$color-primary-default;
+      }
+      &:not(:last-child) {
+        margin-right: style.$gutter-base;
+      }
+      p {
+        color: style.$background-color-light;
+      }
+    }
+  }
+  .widget--value {
+    color: style.$background-color-light;
+
+    font-size: style.$heading-size-large;
+  }
+  .widget-auction {
+    padding: math.div(style.$gutter-base, 2) 0;
+    text-align: center;
+    margin-top: style.$gutter-base;
+    background-color: style.$color-primary-contrast;
+    color: style.$background-color-light;
+    p {
+      margin-bottom: 0;
+    }
+  }
+}

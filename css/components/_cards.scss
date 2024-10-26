@@ -1,0 +1,81 @@
+@use "../abstracts/variables" as style;
+@use "../abstracts/mixins" as mix;
+@use "sass:math";
+
+.card {
+  @include mix.box-shadow;
+  background-color: style.$background-color-light;
+
+  &--highlighted {
+    background-color: style.$color-primary-default;
+  }
+
+  .card-content {
+    padding: math.div(style.$gutter-base, 2);
+    border-radius: 2px;
+    @include mix.wrap(95%);
+
+    .card-heading {
+      color: style.$color-primary-default;
+      margin-bottom: 0;
+      font-size: style.$heading-size-small;
+
+      &--highlighted {
+        color: style.$background-color-light;
+      }
+    }
+    .description {
+      color: style.$color-primary-default;
+      &--hightlighted {
+        color: style.$background-color-light;
+      }
+    }
+
+    .card-content--inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .title {
+      font-size: 18px;
+      color: style.$color-primary-default;
+
+      &--highlighted {
+        color: style.$background-color-light;
+      }
+    }
+
+    .price {
+      background-color: style.$color-primary-default;
+      color: style.$background-color-light;
+      padding: 7px;
+      border-radius: 3px;
+      @include mix.box-shadow;
+      &--highlighted {
+        color: style.$color-primary-default;
+        background-color: style.$background-color-light;
+      }
+    }
+  }
+  .action-buttons {
+    padding: math.div(style.$gutter-base, 2) 0;
+    background-color: style.$color-primary-default;
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+.add-new-item {
+  padding: math.div(style.$gutter-base, 2);
+  text-align: center;
+  background-color: style.$background-color-light;
+
+  span {
+    color: style.$color-primary-default;
+  }
+
+  &--border {
+    border: 2px dashed style.$color-primary-default;
+    padding: style.$gutter-base;
+  }
+}

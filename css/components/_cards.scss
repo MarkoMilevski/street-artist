@@ -5,20 +5,34 @@
 .card {
   @include mix.box-shadow;
   background-color: style.$background-color-light;
+  border-radius: 4px;
+
+  &:not(:last-child) {
+    margin-bottom: style.$gutter-base;
+  }
 
   &--highlighted {
     background-color: style.$color-primary-default;
   }
 
+  img {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+
+  p {
+    font-size: 14px;
+  }
   .card-content {
     padding: math.div(style.$gutter-base, 2);
-    border-radius: 2px;
+
     @include mix.wrap(95%);
 
     .card-heading {
       color: style.$color-primary-default;
       margin-bottom: 0;
       font-size: style.$heading-size-small;
+      font-size: style.$heading-size-large;
 
       &--highlighted {
         color: style.$background-color-light;

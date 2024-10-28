@@ -25,7 +25,11 @@
 }
 .visitor-homepage--nav {
   @include mix.align-center;
-  .hammer {
+  .auction {
+    img {
+      width: 40px;
+      height: 40px;
+    }
     @include mix.nav-bar--icon;
   }
 }

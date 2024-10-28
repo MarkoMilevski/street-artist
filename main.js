@@ -1,5 +1,6 @@
 import { initArtistHomePage } from "./src/pages/artist-home-page/artistHomePage.js";
 import { initLandingPage } from "./src/pages/landingPage.js";
+import { initVisitorListingPage } from "./src/pages/visitor-listing-page/visitorListingPage.js";
 import { initVisitorHomePage } from "./src/pages/visitorHomePage.js";
 
 function handleRouting() {
@@ -33,6 +34,9 @@ function initializePage(hash) {
       break;
     case "#artistHomePage":
       initArtistHomePage();
+      break;
+    case "#visitorListingPage":
+      initVisitorListingPage();
       break;
     default:
       console.error(`page ${hash} was not found `);

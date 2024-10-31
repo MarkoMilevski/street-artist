@@ -175,6 +175,59 @@
       <div class="filterButton">
         <img src="./assets/filter.svg" alt="" />
       </div>
+      <div id="filterPanel">
+        <div class="filter-panel--inner">
+          <div class="filter-header">
+            <h4 class="heading-light">Filter by</h4>
+            <div id="closeFilterPanel">
+              <img src="./assets/close-button.svg" alt="close-button" />
+            </div>
+          </div>
+
+          <label class="filter-panel--label">By Item Title</label>
+          <input
+            type="text"
+            class="item-title filter-panel--input"
+            id="itemTitle"
+            placeholder="Title"
+          />
+          <div class="line"></div>
+          <label class="filter-panel--label">By Artists</label>
+          <select id="sortByArtist" class="filter-panel--select"></select>
+
+          <div class="line"></div>
+
+          <p class="filter-panel--label">By Price</p>
+          <div class="sort-by-price">
+            <div class="min-price">
+              <label for="minPrice" class="filter-panel--label">Min:</label>
+              <input
+                type="number"
+                id="minPrice"
+                class="filter-panel--input"
+                placeholder="price"
+              />
+            </div>
+            <div class="max-price">
+              <label for="maxPrice" class="filter-panel--label">Max:</label
+              ><input
+                type="number"
+                id="maxPrice"
+                class="filter-panel--input"
+                placeholder="price"
+              />
+            </div>
+          </div>
+          <div class="line"></div>
+          <label for="sortByType" class="filter-panel--label">By Type</label>
+          <select id="sortByType" class="filter-panel--select"></select>
+
+          <div class="line"></div>
+          <div class="apply-filter" id="applyFilter">
+            <img src="./assets/apply-filter.svg" alt="apply-filter" />
+          </div>
+        </div>
+      </div>
     </section>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

@@ -3,7 +3,12 @@
 @use "sass:math";
 
 .widgets-container {
-  @include mix.wrap(90%);
+  background-color: style.$background-color-normal;
+  padding: style.$gutter-base 0;
+
+  .widgets-wrapper {
+    @include mix.wrap(90%);
+  }
   .widgets--inner {
     display: flex;
     justify-content: space-between;
@@ -21,13 +26,14 @@
       }
       p {
         color: style.$background-color-light;
+        margin-bottom: 0;
       }
     }
   }
   .widget--value {
     color: style.$background-color-light;
 
-    font-size: style.$heading-size-large;
+    font-size: style.$heading-size-big;
   }
   .widget-auction {
     padding: math.div(style.$gutter-base, 2) 0;

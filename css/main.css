@@ -361,14 +361,46 @@ img {
   padding-right: 0.9375rem;
 }
 
+.artist-items--nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.artist-items--nav .hamburger-icon {
+  font-size: 1.875rem;
+  color: #a16a5e;
+  margin-left: auto;
+  padding-right: 0.9375rem;
+}
+
+.add-new-item--nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.add-new-item--nav .hamburger-icon {
+  font-size: 1.875rem;
+  color: #a16a5e;
+  margin-left: auto;
+  padding-right: 0.9375rem;
+}
+
 .nav-bar--dropdown {
+  position: absolute;
+  z-index: 99;
+  top: 70px;
+  padding: 3.75rem;
   width: 100%;
   height: 200px;
-  background-color: #e09686;
+  background-color: #a16a5e;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
   display: flex;
   justify-content: center;
   align-items: center;
+  display: none;
+}
+.nav-bar--dropdown.show {
+  display: flex;
 }
 .nav-bar--dropdown ul {
   list-style: none;
@@ -381,7 +413,8 @@ img {
 }
 .nav-bar--dropdown a {
   color: #fcebd5;
-  font-size: 3rem;
+  text-decoration: none;
+  font-size: 2.5rem;
   font-weight: 300;
 }
 
@@ -408,8 +441,12 @@ img {
   background-color: #e09686;
 }
 
+.widgets-container {
+  background-color: #edd5bb;
+  padding: 1.875rem 0;
+}
 @media screen and (max-width: 420px) {
-  .widgets-container {
+  .widgets-container .widgets-wrapper {
     width: 90%;
     margin: 0 auto;
   }
@@ -431,10 +468,11 @@ img {
 }
 .widgets-container .widgets--inner .widget p {
   color: #fcebd5;
+  margin-bottom: 0;
 }
 .widgets-container .widget--value {
   color: #fcebd5;
-  font-size: 2.5rem;
+  font-size: 1.875rem;
 }
 .widgets-container .widget-auction {
   padding: 0.9375rem 0;
@@ -631,4 +669,31 @@ img {
   z-index: 999;
   right: 0;
   margin: 0.625rem;
+}
+
+@media screen and (max-width: 425px) {
+  .chart-section {
+    padding: 0.625rem;
+    background-color: #fcebd5;
+    height: calc(100vh - 379px);
+    display: flex;
+    flex-direction: column;
+  }
+  .chart-section h4 {
+    color: #a16a5e;
+    font-weight: 400;
+  }
+  .chart-section .buttons-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  .chart-section .buttons-container button {
+    width: 100px;
+  }
+  .chart-section canvas {
+    margin-top: 1.875rem;
+    flex-grow: 1;
+    max-height: 100%;
+    height: auto;
+  }
 } /*# sourceMappingURL=main.css.map */

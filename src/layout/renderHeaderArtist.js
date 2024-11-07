@@ -1,5 +1,9 @@
+import { getArtist } from "../utils/global.js";
+
 export function renderHeaderArtistPage() {
   let navBarClass;
+
+  const selectedArtist = getArtist();
 
   switch (location.hash) {
     case "#artistHomePage":
@@ -27,7 +31,7 @@ export function renderHeaderArtistPage() {
         <a href="#landingPage">
           <img src="./assets/logo.png" alt="logo" />
         </a>
-        <h1 class="nav-bar--heading" id="artistName"></h1>
+        <h1 class="nav-bar--heading" id="artistName">${selectedArtist}</h1>
         <div class="hamburger-icon" id="navToggle">
           <i class="fas fa-bars"></i>
         </div>

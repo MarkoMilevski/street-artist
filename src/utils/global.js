@@ -1,3 +1,5 @@
+import { getItems } from "./storage.js";
+
 let currentArtist;
 
 export function getArtist() {
@@ -17,7 +19,8 @@ export function setArtist(_artist) {
 }
 
 export function getPublishedItems(items) {
-  return items.filter((item) => item.isPublished);
+  const getItemsFromStorage = getItems();
+  return getItemsFromStorage.filter((item) => item.isPublished);
 }
 
 export function createDropdownOption() {

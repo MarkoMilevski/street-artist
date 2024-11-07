@@ -1,4 +1,5 @@
 import { initArtistHomePage } from "./src/pages/artist-home-page/artistHomePage.js";
+import { initArtistItemsPage } from "./src/pages/artist-items-page/artistItemsPage.js";
 import { initLandingPage } from "./src/pages/landingPage.js";
 import { initVisitorListingPage } from "./src/pages/visitor-listing-page/visitorListingPage.js";
 import { initVisitorHomePage } from "./src/pages/visitorHomePage.js";
@@ -37,6 +38,10 @@ function initializePage(hash) {
       break;
     case "#visitorListingPage":
       initVisitorListingPage();
+
+      break;
+    case "#artistItemsPage":
+      initArtistItemsPage();
       break;
     default:
       console.error(`page ${hash} was not found `);

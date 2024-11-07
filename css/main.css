@@ -30,6 +30,10 @@ img {
   max-width: 100%;
 }
 
+a {
+  text-decoration: none;
+}
+
 @media screen and (max-width: 420px) {
   .heading {
     text-align: center;
@@ -58,7 +62,7 @@ img {
     padding: 1.875rem;
     margin: 0 auto;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%);
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%);
     width: 250px;
     height: 250px;
     background-color: #edd5bb;
@@ -81,7 +85,7 @@ img {
     width: 250px;
     height: 250px;
     -webkit-clip-path: polygon(0 0, 100% 50%, 100% 100%, 0 100%);
-    clip-path: polygon(0 0, 100% 50%, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 50%, 100% 100%, 0 100%);
     left: 50%;
     position: absolute;
     transform: translate(-50%, -50%);
@@ -234,7 +238,7 @@ img {
   margin-top: -30px;
   border: solid 2px #a16a5e;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
 }
 #visitorHomePage #carousel p {
   font-size: 10px;
@@ -486,7 +490,6 @@ img {
 }
 
 .card {
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
   background-color: #fcebd5;
   border-radius: 4px;
 }
@@ -555,10 +558,13 @@ img {
   background-color: #a16a5e;
   display: flex;
   justify-content: space-around;
+  font-size: 12px;
 }
 
 .add-new-item {
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
   padding: 0.9375rem;
+  margin-bottom: 1.875rem;
   text-align: center;
   background-color: #fcebd5;
 }
@@ -568,6 +574,12 @@ img {
 .add-new-item--border {
   border: 2px dashed #a16a5e;
   padding: 1.875rem;
+}
+
+.empty-cards-section {
+  color: #a16a5e;
+  text-align: center;
+  font-size: 1.875rem;
 }
 
 #visitorListingPage {
@@ -647,8 +659,8 @@ img {
   outline: none;
   border: 1px solid #fcebd5;
   -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   cursor: pointer;
   background-image: url("../../../assets/arrow-down.svg");
   background-repeat: no-repeat;
@@ -696,4 +708,9 @@ img {
     max-height: 100%;
     height: auto;
   }
-} /*# sourceMappingURL=main.css.map */
+}
+#artistItemsContainer {
+  background-color: #edd5bb;
+  padding: 1.875rem 0;
+  height: calc(100vh - 70px);
+}/*# sourceMappingURL=main.css.map */

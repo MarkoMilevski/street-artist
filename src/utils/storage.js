@@ -1,0 +1,33 @@
+import { items as defaultItems } from "../../../data/db.js";
+
+export function addItem(item) {
+  items.push(item);
+  localStorage.setItem("items", JSON.stringify(items));
+}
+
+export function updateItem(item) {
+  const editingItemIndex = items.findIndex((i) => i.id === item.id);
+  if (editingItemIndex !== -1) {
+    items[editingItemIndex] = { ...item };
+    localStorage.setItem("items", JSON.stringify(items));
+  }
+}
+
+export function deleteItem(itemId) {
+  const items = getItems();
+  const index = items.findIndex((i) => i.id === itemId);
+
+  if (index !== -1) {
+    items.splice(index, 1);
+    localStorage.setItem("items", JSON.stringify(items));
+  }
+}
+
+export function getItems() {
+  const storedItems = localStorage.getItem("items");
+  if (!storedItems) {
+    localStorage.setItem("items", JSON.stringify(defaultItems));
+  }
+
+  return JSON.parse(storedItems);
+}

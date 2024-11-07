@@ -3,7 +3,7 @@
 @use "sass:math";
 
 .card {
-  @include mix.box-shadow;
+  // @include mix.box-shadow;
   background-color: style.$background-color-light;
   border-radius: 4px;
 
@@ -76,11 +76,14 @@
     background-color: style.$color-primary-default;
     display: flex;
     justify-content: space-around;
+    font-size: 12px;
   }
 }
 
 .add-new-item {
+  @include mix.box-shadow;
   padding: math.div(style.$gutter-base, 2);
+  margin-bottom: style.$gutter-base;
   text-align: center;
   background-color: style.$background-color-light;
 
@@ -92,4 +95,11 @@
     border: 2px dashed style.$color-primary-default;
     padding: style.$gutter-base;
   }
+}
+
+.empty-cards-section {
+  color: style.$color-primary-default;
+  text-align: center;
+
+  font-size: style.$heading-size-big;
 }

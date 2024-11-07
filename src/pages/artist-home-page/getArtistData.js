@@ -1,7 +1,8 @@
 import { items } from "../../../data/db.js";
+import { getItems } from "../../utils/storage.js";
 
 export function getArtistData(artistName) {
-  const artistItems = items.filter((item) => item.artist === artistName);
+  const artistItems = getItems().filter((item) => item.artist === artistName);
 
   console.log(artistItems);
 

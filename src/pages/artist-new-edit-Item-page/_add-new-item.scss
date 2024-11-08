@@ -1,0 +1,134 @@
+@use "../../../css/abstracts/variables" as style;
+@use "../../../css/abstracts/mixins" as mix;
+@use "sass:math";
+
+.add-item-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  height: calc(100vh - 70px);
+  padding: style.$gutter-base math.div(style.$gutter-base, 2);
+  background-color: style.$color-primary-default;
+  color: style.$background-color-light;
+
+  h3 {
+    font-family: style.$font-family-base;
+  }
+
+  input {
+    background-color: transparent;
+    outline: none;
+    border: 1px solid style.$background-color-light;
+    border-radius: 2px;
+    width: 100%;
+    color: style.$background-color-light;
+    padding-left: math.div(style.$gutter-base, 4);
+  }
+  textarea {
+    width: 100%;
+    background-color: transparent;
+    outline: none;
+    border: 1px solid style.$background-color-light;
+    border-radius: 2px;
+    height: 100px;
+    color: style.$background-color-light;
+    padding-left: math.div(style.$gutter-base, 4);
+  }
+
+  label {
+    display: block;
+  }
+
+  select {
+    @include mix.dropdown(style.$background-color-light);
+    width: 180px;
+    border-radius: 2px;
+    height: 28px;
+    background-color: style.$color-primary-default;
+  }
+
+  .form-field {
+    margin-bottom: math.div(style.$gutter-base, 2);
+  }
+  .form-row {
+    display: flex;
+    justify-content: space-between;
+  }
+  span {
+    display: block;
+    margin-bottom: math.div(style.$gutter-base, 2);
+    text-align: center;
+  }
+
+  .is-published {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    #isPublished {
+      display: inline-block;
+    }
+
+    label {
+      font-weight: 200;
+      display: inline-block;
+    }
+
+    input[type="checkbox"] {
+      width: 10px;
+      height: 10px;
+      appearance: none;
+      padding: 10px;
+      border: 1px solid style.$background-color-light;
+      border-radius: 4px;
+      position: relative;
+      cursor: pointer;
+      background-color: transparent;
+
+      &:checked {
+        &::after {
+          content: "";
+          background: url("../../../assets/check.svg");
+          background-size: cover;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 15px;
+          height: 15px;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+  }
+  .buttons-div {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: auto;
+    button {
+      width: 50%;
+    }
+  }
+
+  .capture-image {
+    @include mix.align-center;
+    flex-direction: column;
+    padding: style.$gutter-base;
+    border: 2px dashed style.$background-color-light;
+    height: 100%;
+    margin-bottom: math.div(style.$gutter-base, 2);
+    .camera {
+      font-size: style.$heading-size-large;
+      margin: 0;
+    }
+  }
+
+  .error-message {
+    color: style.$background-color-light;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 0;
+  }
+}

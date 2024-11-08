@@ -24,7 +24,7 @@ function initNavBar(header) {
   }
 }
 
-function renderArtistCards(selectedArtist) {
+export function renderArtistCards(selectedArtist) {
   const cardsContainer = document.querySelector("#cardsContainer");
   cardsContainer.innerHTML = "";
 

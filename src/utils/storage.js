@@ -1,11 +1,13 @@
 import { items as defaultItems } from "../../../data/db.js";
 
 export function addItem(item) {
+  const items = getItems();
   items.push(item);
   localStorage.setItem("items", JSON.stringify(items));
 }
 
 export function updateItem(item) {
+  const items = getItems();
   const editingItemIndex = items.findIndex((i) => i.id === item.id);
   if (editingItemIndex !== -1) {
     items[editingItemIndex] = { ...item };

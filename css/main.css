@@ -62,7 +62,7 @@ a {
     padding: 1.875rem;
     margin: 0 auto;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%);
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%);
     width: 250px;
     height: 250px;
     background-color: #edd5bb;
@@ -85,7 +85,7 @@ a {
     width: 250px;
     height: 250px;
     -webkit-clip-path: polygon(0 0, 100% 50%, 100% 100%, 0 100%);
-    clip-path: polygon(0 0, 100% 50%, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 50%, 100% 100%, 0 100%);
     left: 50%;
     position: absolute;
     transform: translate(-50%, -50%);
@@ -238,7 +238,7 @@ a {
   margin-top: -30px;
   border: solid 2px #a16a5e;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
 }
 #visitorHomePage #carousel p {
   font-size: 10px;
@@ -383,6 +383,18 @@ a {
   align-items: center;
 }
 .add-new-item--nav .hamburger-icon {
+  font-size: 1.875rem;
+  color: #a16a5e;
+  margin-left: auto;
+  padding-right: 0.9375rem;
+}
+
+.capture-image--nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.capture-image--nav .hamburger-icon {
   font-size: 1.875rem;
   color: #a16a5e;
   margin-left: auto;
@@ -660,8 +672,8 @@ a {
   outline: none;
   border: 1px solid #fcebd5;
   -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   cursor: pointer;
   background-image: url("../../../assets/arrow-down.svg");
   background-repeat: no-repeat;
@@ -785,12 +797,12 @@ a {
   font-weight: 200;
   display: inline-block;
 }
-.add-item-form .is-published input[type="checkbox"] {
+.add-item-form .is-published input[type=checkbox] {
   width: 10px;
   height: 10px;
   -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   padding: 10px;
   border: 1px solid #fcebd5;
   border-radius: 4px;
@@ -798,7 +810,7 @@ a {
   cursor: pointer;
   background-color: transparent;
 }
-.add-item-form .is-published input[type="checkbox"]:checked::after {
+.add-item-form .is-published input[type=checkbox]:checked::after {
   content: "";
   background: url("../../../assets/check.svg");
   background-size: cover;
@@ -819,13 +831,12 @@ a {
   width: 50%;
 }
 .add-item-form .capture-image {
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 1.875rem;
   border: 2px dashed #fcebd5;
-  height: 100%;
   margin-bottom: 0.9375rem;
 }
 .add-item-form .capture-image .camera {
@@ -837,4 +848,35 @@ a {
   font-weight: bold;
   text-align: left;
   margin-bottom: 0;
-} /*# sourceMappingURL=main.css.map */
+}
+.add-item-form .captured-image {
+  width: 100%;
+  height: 25vh;
+}
+
+.capture-container {
+  height: calc(100vh - 70px);
+  padding: 1.875rem;
+  background-color: #a16a5e;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.capture-container canvas {
+  display: none;
+}
+.capture-container video {
+  box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.25);
+  flex-grow: 1;
+  -o-object-fit: fill;
+     object-fit: fill;
+  width: 100%;
+}
+.capture-container .camera-button {
+  display: block;
+  border: none;
+  background-color: transparent;
+  font-size: 2.5rem;
+  color: #fcebd5;
+  margin-top: 0.9375rem;
+}/*# sourceMappingURL=main.css.map */

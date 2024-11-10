@@ -1,0 +1,33 @@
+@use "../../../css/abstracts/variables" as style;
+@use "../../../css/abstracts/mixins" as mix;
+@use "sass:math";
+
+.capture-container {
+  height: calc(100vh - 70px);
+  padding: style.$gutter-base;
+  background-color: style.$color-primary-default;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  canvas {
+    display: none;
+  }
+
+  video {
+    box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.25);
+    flex-grow: 1;
+    object-fit: fill;
+
+    width: 100%;
+  }
+
+  .camera-button {
+    display: block;
+    border: none;
+    background-color: transparent;
+    font-size: style.$heading-size-large;
+    color: style.$background-color-light;
+    margin-top: math.div(style.$gutter-base, 2);
+  }
+}

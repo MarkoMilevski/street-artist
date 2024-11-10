@@ -275,10 +275,10 @@
           </div>
           <div class="form-field">
             <label for="image">Image URL</label>
-            <input type="url" id="image" />
+            <input type="url" id="imageUrl" />
           </div>
           <span>Or</span>
-          <div class="capture-image">
+          <div class="capture-image" id="captureImage">
             <span class="camera"><i class="fas fa-camera"></i></span>
             <span>Take a snapshot</span>
           </div>
@@ -288,6 +288,20 @@
             <button class="button-gray" id="cancelButton">Cancel</button>
           </div>
         </form>
+      </div>
+    </section>
+    <section class="page" id="captureImagePage">
+      <header></header>
+      <div class="capture-container">
+        <video id="liveCamera" autoplay></video>
+
+        <canvas id="captureCanvas"></canvas>
+
+        <button id="snapshotButton" class="camera-button">
+          <i class="fas fa-camera"></i>
+        </button>
+
+        <img id="imageToDisplay" src="" alt="" />
       </div>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

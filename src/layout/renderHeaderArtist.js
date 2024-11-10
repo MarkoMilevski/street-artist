@@ -15,17 +15,13 @@ export function renderHeaderArtistPage() {
     case "#addNewItemPage":
       navBarClass = "add-new-item--nav";
       break;
+    case "#captureImagePage":
+      navBarClass = "capture-image--nav";
+      break;
     default:
       navBarClass = "";
   }
 
-  if (location.hash === "#artistHomePage") {
-    navBarClass = "artist-homepage--nav";
-  } else if (location.hash === "#artistItemsPage") {
-    navBarClass = "artist-items--nav";
-  } else if (location.hash === "#addNewItemPage") {
-    navBarClass = "add-new-item--nav";
-  }
   return `
     <nav class="nav-bar ${navBarClass}">
         <a href="#landingPage">

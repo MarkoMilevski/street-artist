@@ -52,6 +52,12 @@
     @include mix.nav-bar--icon;
   }
 }
+.capture-image--nav {
+  @include mix.align-center;
+  .hamburger-icon {
+    @include mix.nav-bar--icon;
+  }
+}
 
 .nav-bar--dropdown {
   position: absolute;

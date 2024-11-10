@@ -6,6 +6,7 @@ import {
   handleNavBarclick,
   resetForm,
 } from "../../utils/global.js";
+import { startCamera } from "../capture-image-page/capture-image.js";
 import { createAndAddItem } from "./add-item.js";
 
 export function initAddNewItemsPage() {
@@ -27,6 +28,13 @@ export function initAddNewItemsPage() {
 
   populateItemTypes();
   createItem();
+
+  const takeSnapshotButton = document.querySelector("#captureImage");
+  if (takeSnapshotButton) {
+    takeSnapshotButton.addEventListener("click", redirectToCamera);
+  }
+
+  renderCapturedImage();
 }
 
 function createItem() {
@@ -34,7 +42,7 @@ function createItem() {
   const cancelButton = document.querySelector("#cancelButton");
 
   if (addNewItemButton) {
-    addButton.addEventListener("click", (event) => {
+    addNewItemButton.addEventListener("click", (event) => {
       event.preventDefault();
 
       createAndAddItem();
@@ -67,4 +75,19 @@ function cancelItem() {
   console.log("Canceled");
   resetForm();
   location.hash = "#artistItemsPage";
+}
+
+function redirectToCamera() {
+  location.hash = "#captureImagePage";
+  startCamera();
+}
+
+function renderCapturedImage() {
+  const capturedImage = localStorage.getItem("capturedImage");
+  const imageInput = document.querySelector("#imageUrl");
+  if (capturedImage) {
+    const captureImageDiv = document.querySelector("#captureImage");
+    captureImageDiv.innerHTML = `<img src="${capturedImage}" alt="Captured Image" class="captured-image"/>`;
+    imageInput.value = capturedImage;
+  }
 }

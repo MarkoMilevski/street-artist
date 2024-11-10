@@ -10,7 +10,7 @@ function getValuesFromForm() {
   const descriptionInput = form.querySelector("#description");
   const typeSelect = form.querySelector("#typeSelect");
   const priceInput = form.querySelector("#price");
-  const imageInput = form.querySelector("#image");
+  const imageInput = form.querySelector("#imageUrl");
 
   const newItem = {
     id: new Date().valueOf(),

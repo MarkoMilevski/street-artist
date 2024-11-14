@@ -166,7 +166,9 @@
             </div>
           </div>
 
-          <label class="filter-panel--label">By Item Title</label>
+          <label class="filter-panel--label" for="itemTitle"
+            >By Item Title</label
+          >
           <input
             type="text"
             class="item-title filter-panel--input"
@@ -174,7 +176,9 @@
             placeholder="Title"
           />
           <div class="line"></div>
-          <label class="filter-panel--label">By Artists</label>
+          <label class="filter-panel--label" for="sortByArtist"
+            >By Artists</label
+          >
           <select id="sortByArtist" class="filter-panel--select"></select>
 
           <div class="line"></div>
@@ -243,7 +247,7 @@
       <div id="newItemForm">
         <form id="itemForm" class="add-item-form">
           <div class="form-row">
-            <h3>Add new Item</h3>
+            <h3 id="formTitle">Add new Item</h3>
             <div class="form-field">
               <div class="is-published">
                 <label for="isPublished">Is published</label>
@@ -274,7 +278,7 @@
             </div>
           </div>
           <div class="form-field">
-            <label for="image">Image URL</label>
+            <label for="imageUrl">Image URL</label>
             <input type="url" id="imageUrl" />
           </div>
           <span>Or</span>

@@ -1,10 +1,11 @@
+import { clearEditingItem, getEditingItem } from "../../utils/editMode.js";
 import { getArtist, resetForm } from "../../utils/global.js";
-import { addItem } from "../../utils/storage.js";
+import { addItem, updateItem } from "../../utils/storage.js";
 import { renderArtistCards } from "../artist-items-page/artistItemsPage.js";
 
 const form = document.querySelector("#itemForm");
 
-function getValuesFromForm() {
+export function getValuesFromForm() {
   const titleInput = form.querySelector("#title");
   const isPublishedInput = form.querySelector("#isPublished");
   const descriptionInput = form.querySelector("#description");
@@ -12,32 +13,42 @@ function getValuesFromForm() {
   const priceInput = form.querySelector("#price");
   const imageInput = form.querySelector("#imageUrl");
 
-  const newItem = {
-    id: new Date().valueOf(),
+  const editingItem = getEditingItem();
+
+  const item = {
+    id: editingItem ? editingItem.id : new Date().valueOf(),
     description: descriptionInput.value,
     image: imageInput.value,
     price: +priceInput.value,
     artist: getArtist(),
-    dateCreated: new Date().toISOString(),
+    dateCreated: editingItem
+      ? editingItem.dateCreated
+      : new Date().toISOString(),
     isPublished: isPublishedInput.checked,
-    isAuctioning: false,
-    dateSold: null,
-    priceSold: null,
+    isAuctioning: editingItem ? editingItem.isAuctioning : false,
+    dateSold: editingItem ? editingItem.dateSold : null,
+    priceSold: editingItem ? editingItem.priceSold : null,
     title: titleInput.value,
     type: typeSelect.value,
   };
 
-  return newItem;
+  return item;
 }
 
 export function createAndAddItem() {
-  const newItem = getValuesFromForm();
+  const item = getValuesFromForm();
 
-  if (newItem) {
-    addItem(newItem);
-    resetForm();
-    renderArtistCards(newItem);
+  const editingItem = getEditingItem(item);
 
-    location.hash = "#artistItemsPage";
+  if (editingItem) {
+    updateItem(item);
+  } else {
+    addItem(item);
   }
+  renderArtistCards(item.artist);
+
+  resetForm();
+
+  location.hash = "#artistItemsPage";
+  clearEditingItem();
 }

@@ -1,13 +1,16 @@
 import { itemTypes } from "../../../data/db.js";
 import { renderHeaderArtistPage } from "../../layout/renderHeaderArtist.js";
+import { clearEditingItem, getEditingItem } from "../../utils/editMode.js";
 import {
   createDropdownOption,
   getArtist,
   handleNavBarclick,
   resetForm,
 } from "../../utils/global.js";
+import { updateItem } from "../../utils/storage.js";
 import { startCamera } from "../capture-image-page/capture-image.js";
-import { createAndAddItem } from "./add-item.js";
+import { createAndAddItem, getValuesFromForm } from "./add-item.js";
+import { fillFormForEdit } from "./edit-item.js";
 
 export function initAddNewItemsPage() {
   console.log("Init Add new items page");
@@ -29,6 +32,13 @@ export function initAddNewItemsPage() {
   populateItemTypes();
   createItem();
 
+  const editingItem = getEditingItem();
+  if (editingItem) {
+    fillFormForEdit(editingItem); // Fill form with existing item data
+  } else {
+    createItem(); // Set up form for adding new item
+  }
+
   const takeSnapshotButton = document.querySelector("#captureImage");
   if (takeSnapshotButton) {
     takeSnapshotButton.addEventListener("click", redirectToCamera);
@@ -38,15 +48,12 @@ export function initAddNewItemsPage() {
 }
 
 function createItem() {
-  const addNewItemButton = document.querySelector("#addButton");
+  const itemForm = document.querySelector("#itemForm");
   const cancelButton = document.querySelector("#cancelButton");
 
-  if (addNewItemButton) {
-    addNewItemButton.addEventListener("click", (event) => {
-      event.preventDefault();
-
-      createAndAddItem();
-    });
+  if (itemForm) {
+    itemForm.removeEventListener("submit", handleFormSubmit);
+    itemForm.addEventListener("submit", handleFormSubmit);
   }
 
   if (cancelButton) {
@@ -55,6 +62,23 @@ function createItem() {
       cancelItem();
     });
   }
+}
+
+function handleFormSubmit(event) {
+  event.preventDefault();
+
+  const editingItem = getEditingItem();
+  console.log(editingItem, "Editing item");
+
+  if (editingItem) {
+    const updatedItem = getValuesFromForm(editingItem);
+    updateItem(updatedItem);
+    clearEditingItem();
+  } else {
+    createAndAddItem();
+  }
+
+  location.hash = "#artistItemsPage";
 }
 
 function populateItemTypes() {

@@ -1,7 +1,8 @@
-import { items } from "../../../data/db.js";
 import { renderHeaderArtistPage } from "../../layout/renderHeaderArtist.js";
+import { setEditingItem } from "../../utils/editMode.js";
 import { getArtist, handleNavBarclick } from "../../utils/global.js";
 import { deleteItem, getItems, updateItem } from "../../utils/storage.js";
+import { handleEditButtonClick } from "../artist-new-edit-Item-page/edit-item.js";
 
 export function initArtistItemsPage() {
   const itemsPageHeader = document.querySelector("#artistItemsPage header");
@@ -32,27 +33,34 @@ export function renderArtistCards(selectedArtist) {
     (item) => item.artist === selectedArtist
   );
 
-  console.log(artistItems);
-
   if (artistItems.length === 0) {
     cardsContainer.innerHTML = `<h2 class="empty-cards-section">You don't have any items yet, ${selectedArtist}!</h2>`;
-  } else {
-    artistItems.forEach(setupCards);
+    return;
   }
+
+  artistItems.forEach((item, index) => setupCards(item, index, cardsContainer));
 }
 
-function setupCards(item) {
+function setupCards(item, index, cardsContainer) {
   const itemCard = createArtistItemCard(item);
 
   cardsContainer.appendChild(itemCard);
 
-  const publishButton = document.querySelector(`#publishButton-${item.id}`);
+  const publishButton = itemCard.querySelector("#publishButton");
+  const removeButton = itemCard.querySelector("#removeButton");
+  const editButton = itemCard.querySelector("#editButton");
 
-  const removeButton = document.querySelector(`#removeButton-${item.id}`);
+  publishButton.addEventListener("click", () => {
+    togglePublishedStatus(item, publishButton);
+  });
 
   removeButton.addEventListener("click", () => {
     deleteItem(item.id);
     renderArtistCards(getArtist());
+  });
+
+  editButton.addEventListener("click", () => {
+    handleEditButtonClick(item, index);
   });
 }
 
@@ -81,12 +89,27 @@ function createArtistItemCard(item) {
   </div>
   <div class="action-buttons">
   <button class="button-blue">Send to Auction</button>
-  <button class="${publishButtonClass}" id="publishButton-${item.id}">${publishButtonText}</button>
-  <button class="button-contrast" id="removeButton-${item.id}">Remove</button>
-  <button class="button-light">Edit</button>
+  <button class="${publishButtonClass}" id="publishButton">${publishButtonText}</button>
+  <button class="button-contrast" id="removeButton">Remove</button>
+  <button class="button-light" id="editButton">Edit</button>
       </div>
     </div>
   </div>`;
 
   return itemCard;
+}
+
+function togglePublishedStatus(item, publishButton) {
+  const items = getItems();
+  const foundItem = items.find((index) => index.id === item.id);
+
+  if (!foundItem) return;
+
+  foundItem.isPublished = !foundItem.isPublished;
+
+  publishButton.textContent = foundItem.isPublished ? "Unpublish" : "Publish";
+  publishButton.classList.toggle("button-green", foundItem.isPublished);
+  publishButton.classList.toggle("button-gray", !foundItem.isPublished);
+
+  updateItem(foundItem);
 }

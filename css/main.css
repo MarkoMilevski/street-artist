@@ -62,7 +62,7 @@ a {
     padding: 1.875rem;
     margin: 0 auto;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%);
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%);
     width: 250px;
     height: 250px;
     background-color: #edd5bb;
@@ -85,7 +85,7 @@ a {
     width: 250px;
     height: 250px;
     -webkit-clip-path: polygon(0 0, 100% 50%, 100% 100%, 0 100%);
-            clip-path: polygon(0 0, 100% 50%, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 50%, 100% 100%, 0 100%);
     left: 50%;
     position: absolute;
     transform: translate(-50%, -50%);
@@ -238,7 +238,7 @@ a {
   margin-top: -30px;
   border: solid 2px #a16a5e;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 #visitorHomePage #carousel p {
   font-size: 10px;
@@ -672,8 +672,8 @@ a {
   outline: none;
   border: 1px solid #fcebd5;
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   cursor: pointer;
   background-image: url("../../../assets/arrow-down.svg");
   background-repeat: no-repeat;
@@ -726,6 +726,10 @@ a {
   background-color: #edd5bb;
   padding: 1.875rem 0;
   height: calc(100vh - 70px);
+}
+
+#cardsContainer {
+  background-color: #edd5bb;
 }
 
 .add-item-form {
@@ -797,12 +801,12 @@ a {
   font-weight: 200;
   display: inline-block;
 }
-.add-item-form .is-published input[type=checkbox] {
+.add-item-form .is-published input[type="checkbox"] {
   width: 10px;
   height: 10px;
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   padding: 10px;
   border: 1px solid #fcebd5;
   border-radius: 4px;
@@ -810,7 +814,7 @@ a {
   cursor: pointer;
   background-color: transparent;
 }
-.add-item-form .is-published input[type=checkbox]:checked::after {
+.add-item-form .is-published input[type="checkbox"]:checked::after {
   content: "";
   background: url("../../../assets/check.svg");
   background-size: cover;
@@ -869,7 +873,7 @@ a {
   box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.25);
   flex-grow: 1;
   -o-object-fit: fill;
-     object-fit: fill;
+  object-fit: fill;
   width: 100%;
 }
 .capture-container .camera-button {
@@ -879,4 +883,4 @@ a {
   font-size: 2.5rem;
   color: #fcebd5;
   margin-top: 0.9375rem;
-}/*# sourceMappingURL=main.css.map */
+} /*# sourceMappingURL=main.css.map */

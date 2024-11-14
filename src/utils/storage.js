@@ -1,14 +1,19 @@
 import { items as defaultItems } from "../../../data/db.js";
 
 export function addItem(item) {
+  const items = getItems();
   items.push(item);
+
   localStorage.setItem("items", JSON.stringify(items));
 }
 
-export function updateItem(item) {
-  const editingItemIndex = items.findIndex((i) => i.id === item.id);
+export function updateItem(updatedItem) {
+  const items = getItems();
+  const editingItemIndex = items.findIndex(
+    (item) => item.id === updatedItem.id
+  );
   if (editingItemIndex !== -1) {
-    items[editingItemIndex] = { ...item };
+    items[editingItemIndex] = updatedItem;
     localStorage.setItem("items", JSON.stringify(items));
   }
 }
@@ -27,6 +32,7 @@ export function getItems() {
   const storedItems = localStorage.getItem("items");
   if (!storedItems) {
     localStorage.setItem("items", JSON.stringify(defaultItems));
+    return defaultItems;
   }
 
   return JSON.parse(storedItems);

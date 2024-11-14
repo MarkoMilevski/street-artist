@@ -1,5 +1,9 @@
-import { items, itemTypes } from "../../data/db.js";
-import { createDropdownOption, getPublishedItems } from "../utils/global.js";
+import { items } from "../../data/db.js";
+import {
+  createDropdownOption,
+  getPublishedItems,
+  populateItemTypes,
+} from "../utils/global.js";
 import { renderArtCards } from "../pages/visitor-listing-page/renderArtCards.js";
 
 const artistCards = document.querySelector("#artistCards");
@@ -61,20 +65,6 @@ function filterItems() {
   renderArtCards(filteredItems);
   filterPanel.style.display = "none";
   filterButton.style.display = "block";
-}
-
-function populateItemTypes() {
-  const typeSelect = document.querySelector("#sortByType");
-  typeSelect.innerHTML = "";
-  const chooseOption = createDropdownOption();
-  typeSelect.appendChild(chooseOption);
-
-  itemTypes.forEach((type) => {
-    const option = document.createElement("option");
-    option.value = type;
-    option.textContent = type;
-    typeSelect.appendChild(option);
-  });
 }
 
 function populateArtist() {

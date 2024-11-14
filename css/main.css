@@ -62,7 +62,7 @@ a {
     padding: 1.875rem;
     margin: 0 auto;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%);
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%);
     width: 250px;
     height: 250px;
     background-color: #edd5bb;
@@ -85,7 +85,7 @@ a {
     width: 250px;
     height: 250px;
     -webkit-clip-path: polygon(0 0, 100% 50%, 100% 100%, 0 100%);
-            clip-path: polygon(0 0, 100% 50%, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 50%, 100% 100%, 0 100%);
     left: 50%;
     position: absolute;
     transform: translate(-50%, -50%);
@@ -238,7 +238,7 @@ a {
   margin-top: -30px;
   border: solid 2px #a16a5e;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 #visitorHomePage #carousel p {
   font-size: 10px;
@@ -389,6 +389,18 @@ a {
   padding-right: 0.9375rem;
 }
 
+.capture-image--nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.capture-image--nav .hamburger-icon {
+  font-size: 1.875rem;
+  color: #a16a5e;
+  margin-left: auto;
+  padding-right: 0.9375rem;
+}
+
 .nav-bar--dropdown {
   position: absolute;
   z-index: 99;
@@ -502,6 +514,7 @@ a {
 .card img {
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
+  width: 100%;
 }
 .card p {
   font-size: 14px;
@@ -659,8 +672,8 @@ a {
   outline: none;
   border: 1px solid #fcebd5;
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   cursor: pointer;
   background-image: url("../../../assets/arrow-down.svg");
   background-repeat: no-repeat;
@@ -713,4 +726,161 @@ a {
   background-color: #edd5bb;
   padding: 1.875rem 0;
   height: calc(100vh - 70px);
-}/*# sourceMappingURL=main.css.map */
+}
+
+#cardsContainer {
+  background-color: #edd5bb;
+}
+
+.add-item-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100vh - 70px);
+  padding: 1.875rem 0.9375rem;
+  background-color: #a16a5e;
+  color: #fcebd5;
+}
+.add-item-form h3 {
+  font-family: "Roboto", sans-serif;
+}
+.add-item-form input {
+  background-color: transparent;
+  outline: none;
+  border: 1px solid #fcebd5;
+  border-radius: 2px;
+  width: 100%;
+  color: #fcebd5;
+  padding-left: 0.46875rem;
+}
+.add-item-form textarea {
+  width: 100%;
+  background-color: transparent;
+  outline: none;
+  border: 1px solid #fcebd5;
+  border-radius: 2px;
+  height: 100px;
+  color: #fcebd5;
+  padding-left: 0.46875rem;
+}
+.add-item-form label {
+  display: block;
+}
+.add-item-form select {
+  background-color: transparent;
+  color: #fcebd5;
+  border: 1px solid #fcebd5;
+  outline: none;
+  width: 180px;
+  border-radius: 2px;
+  height: 28px;
+  background-color: #a16a5e;
+}
+.add-item-form .form-field {
+  margin-bottom: 0.9375rem;
+}
+.add-item-form .form-row {
+  display: flex;
+  justify-content: space-between;
+}
+.add-item-form span {
+  display: block;
+  margin-bottom: 0.9375rem;
+  text-align: center;
+}
+.add-item-form .is-published {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.add-item-form .is-published #isPublished {
+  display: inline-block;
+}
+.add-item-form .is-published label {
+  font-weight: 200;
+  display: inline-block;
+}
+.add-item-form .is-published input[type="checkbox"] {
+  width: 10px;
+  height: 10px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 10px;
+  border: 1px solid #fcebd5;
+  border-radius: 4px;
+  position: relative;
+  cursor: pointer;
+  background-color: transparent;
+}
+.add-item-form .is-published input[type="checkbox"]:checked::after {
+  content: "";
+  background: url("../../../assets/check.svg");
+  background-size: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  transform: translate(-50%, -50%);
+}
+.add-item-form .buttons-div {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: auto;
+}
+.add-item-form .buttons-div button {
+  width: 50%;
+}
+.add-item-form .capture-image {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 2px dashed #fcebd5;
+  margin-bottom: 0.9375rem;
+}
+.add-item-form .capture-image .camera {
+  font-size: 2.5rem;
+  margin: 0;
+}
+.add-item-form .error-message {
+  color: #fcebd5;
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 0;
+}
+.add-item-form .captured-image {
+  width: 100%;
+  height: 25vh;
+}
+
+.capture-container {
+  height: calc(100vh - 70px);
+  padding: 1.875rem;
+  background-color: #a16a5e;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.capture-container canvas {
+  display: none;
+}
+.capture-container video {
+  box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.25);
+  flex-grow: 1;
+  -o-object-fit: fill;
+  object-fit: fill;
+  width: 100%;
+}
+.capture-container .camera-button {
+  display: block;
+  border: none;
+  background-color: transparent;
+  font-size: 2.5rem;
+  color: #fcebd5;
+  margin-top: 0.9375rem;
+} /*# sourceMappingURL=main.css.map */

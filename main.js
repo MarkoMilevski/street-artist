@@ -2,9 +2,9 @@ import { initArtistHomePage } from "./src/pages/artist-home-page/artistHomePage.
 import { initArtistItemsPage } from "./src/pages/artist-items-page/artistItemsPage.js";
 import { initAddNewItemsPage } from "./src/pages/artist-new-edit-Item-page/artist-new-edit-Item-page.js";
 import { initCaptureImagePage } from "./src/pages/capture-image-page/capture-image.js";
-import { initLandingPage } from "./src/pages/landingPage.js";
+import { initLandingPage } from "./src/pages/landing-page/landingPage.js";
 import { initVisitorListingPage } from "./src/pages/visitor-listing-page/visitorListingPage.js";
-import { initVisitorHomePage } from "./src/pages/visitorHomePage.js";
+import { initVisitorHomePage } from "./src/pages/visitor-home-page/visitorHomePage.js";
 
 function handleRouting() {
   const hash = location.hash || "#landingPage";

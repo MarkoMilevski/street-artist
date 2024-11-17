@@ -2,8 +2,6 @@ import { setEditingItem } from "../../utils/editMode.js";
 import { getItems } from "../../utils/storage.js";
 
 export function handleEditButtonClick(item, index) {
-  console.log(index, "Index");
-
   setEditingItem(item);
   fillFormForEdit(item);
   location.hash = "#addNewItemPage";

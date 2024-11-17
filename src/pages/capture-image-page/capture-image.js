@@ -2,19 +2,25 @@ import { renderHeaderArtistPage } from "../../layout/renderHeaderArtist.js";
 import { handleNavBarclick } from "../../utils/global.js";
 
 export function initCaptureImagePage() {
-  console.log("Init capture image page");
-
   const header = document.querySelector("#captureImagePage header");
-  const navBar = renderHeaderArtistPage();
-  header.innerHTML = navBar;
-
-  const navToggle = document.querySelector("#navToggle");
-  navToggle.addEventListener("click", handleNavBarclick);
+  if (header) {
+    initNavBar(header);
+  }
 
   const snapshotButton = document.querySelector("#snapshotButton");
   snapshotButton.addEventListener("click", handleCaptureImage);
 }
 
+function initNavBar(header) {
+  const existingNavBar = header.querySelector(".nav-bar");
+
+  if (existingNavBar) {
+    existingNavBar.remove();
+  }
+
+  const navBar = renderHeaderArtistPage();
+  header.appendChild(navBar);
+}
 export function startCamera() {
   const liveStreamVideo = document.querySelector("#liveCamera");
 
@@ -43,6 +49,5 @@ function handleCaptureImage() {
   const imageData = captureCanvas.toDataURL("image/png");
   localStorage.setItem("capturedImage", imageData);
 
-  console.log(imageData);
   location.hash = "#addNewItemPage";
 }

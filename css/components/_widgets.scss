@@ -36,7 +36,7 @@
     font-size: style.$heading-size-big;
   }
   .widget-auction {
-    padding: math.div(style.$gutter-base, 2) 0;
+    padding: math.div(style.$gutter-base, 2);
     text-align: center;
     margin-top: style.$gutter-base;
     background-color: style.$color-primary-contrast;

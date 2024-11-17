@@ -4,7 +4,6 @@ import { clearEditingItem, getEditingItem } from "../../utils/editMode.js";
 import {
   createDropdownOption,
   getArtist,
-  handleNavBarclick,
   resetForm,
 } from "../../utils/global.js";
 import { updateItem } from "../../utils/storage.js";
@@ -13,16 +12,13 @@ import { createAndAddItem, getValuesFromForm } from "./add-item.js";
 import { fillFormForEdit } from "./edit-item.js";
 
 export function initAddNewItemsPage() {
-  console.log("Init Add new items page");
-
   const header = document.querySelector("#addNewItemPage header");
-  const navBar = renderHeaderArtistPage();
-  header.innerHTML = navBar;
+  header.innerHTML = "";
 
+  if (header) {
+    initNavBar(header);
+  }
   const selectedArtist = getArtist();
-
-  const navToggle = document.querySelector("#navToggle");
-  navToggle.addEventListener("click", handleNavBarclick);
 
   const artistName = document.querySelector("#artistName");
   if (artistName) {
@@ -34,10 +30,12 @@ export function initAddNewItemsPage() {
 
   const editingItem = getEditingItem();
   if (editingItem) {
-    fillFormForEdit(editingItem); // Fill form with existing item data
+    fillFormForEdit(editingItem);
   } else {
-    createItem(); // Set up form for adding new item
+    createItem();
   }
+
+  updateFormTitle();
 
   const takeSnapshotButton = document.querySelector("#captureImage");
   if (takeSnapshotButton) {
@@ -45,6 +43,32 @@ export function initAddNewItemsPage() {
   }
 
   renderCapturedImage();
+}
+
+function updateFormTitle() {
+  const formTitle = document.querySelector("#formTitle");
+  const addButton = document.querySelector("#addButton");
+
+  const editingItem = getEditingItem();
+
+  if (formTitle) {
+    formTitle.textContent = editingItem ? "Edit Item" : "Add New Item";
+  }
+
+  if (addButton) {
+    addButton.textContent = editingItem ? "Edit Item" : "Add Item";
+  }
+}
+
+function initNavBar(header) {
+  const existingNavBar = header.querySelector(".nav-bar");
+
+  if (existingNavBar) {
+    existingNavBar.remove();
+  }
+
+  const navBar = renderHeaderArtistPage();
+  header.appendChild(navBar);
 }
 
 function createItem() {
@@ -68,7 +92,6 @@ function handleFormSubmit(event) {
   event.preventDefault();
 
   const editingItem = getEditingItem();
-  console.log(editingItem, "Editing item");
 
   if (editingItem) {
     const updatedItem = getValuesFromForm(editingItem);
@@ -96,8 +119,8 @@ function populateItemTypes() {
 }
 
 function cancelItem() {
-  console.log("Canceled");
   resetForm();
+  clearEditingItem();
   location.hash = "#artistItemsPage";
 }
 
@@ -109,9 +132,17 @@ function redirectToCamera() {
 function renderCapturedImage() {
   const capturedImage = localStorage.getItem("capturedImage");
   const imageInput = document.querySelector("#imageUrl");
-  if (capturedImage) {
+  const editingItem = getEditingItem();
+
+  const imageSrc = editingItem ? editingItem.image : capturedImage;
+
+  if (imageSrc) {
     const captureImageDiv = document.querySelector("#captureImage");
-    captureImageDiv.innerHTML = `<img src="${capturedImage}" alt="Captured Image" class="captured-image"/>`;
-    imageInput.value = capturedImage;
+    captureImageDiv.innerHTML = `<img src="${imageSrc}" alt="Item Image" class="captured-image"/>`;
+    imageInput.value = imageSrc;
+  }
+
+  if (!editingItem) {
+    localStorage.removeItem("capturedImage");
   }
 }

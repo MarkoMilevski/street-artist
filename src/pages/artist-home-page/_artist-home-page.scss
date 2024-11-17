@@ -2,31 +2,26 @@
 @use "../../../css/abstracts/mixins" as mix;
 @use "sass:math";
 
-@media screen and (max-width: 425px) {
-  .chart-section {
-    padding: math.div(style.$gutter-base, 3);
-    background-color: style.$background-color-light;
-    height: calc(100vh - 379px);
+.chart-section {
+  padding: math.div(style.$gutter-base, 3);
+  background-color: style.$background-color-light;
+  height: calc(100vh - 379px);
+  display: flex;
+  flex-direction: column;
+
+  h4 {
+    color: style.$color-primary-default;
+    font-weight: 400;
+  }
+
+  .buttons-container {
     display: flex;
-    flex-direction: column;
-
-    h4 {
-      color: style.$color-primary-default;
-      font-weight: 400;
+    justify-content: space-between;
+    button {
+      width: style.$gutter-base * 3;
     }
-
-    .buttons-container {
-      display: flex;
-      justify-content: space-between;
-      button {
-        width: 100px;
-      }
-    }
-    canvas {
-      margin-top: style.$gutter-base;
-      flex-grow: 1;
-      max-height: 100%;
-      height: auto;
-    }
+  }
+  canvas {
+    margin-top: style.$gutter-base;
   }
 }

@@ -22,22 +22,37 @@ export function renderHeaderArtistPage() {
       navBarClass = "";
   }
 
-  return `
-    <nav class="nav-bar ${navBarClass}">
-        <a href="#landingPage">
-          <img src="./assets/logo.png" alt="logo" />
-        </a>
-        <h1 class="nav-bar--heading" id="artistName">${selectedArtist}</h1>
-        <div class="hamburger-icon" id="navToggle">
-          <i class="fas fa-bars"></i>
-        </div>
-      </nav>
-      <div class="nav-bar--dropdown" id="navDropdown">
+  const wrapper = document.createElement("div");
+
+  const toggle = document.createElement("div");
+  toggle.classList.add("hamburger-icon");
+  toggle.innerHTML = `<i class="fas fa-bars"></i>`;
+
+  const navDropDown = document.createElement("div");
+  navDropDown.classList.add("nav-bar--dropdown");
+  navDropDown.innerHTML = `
         <ul>
           <li><a href="#artistHomePage">Home</a></li>
           <li><a href="#artistItemsPage">Items</a></li>
-          <li><a href="#visitorHomePage">Auction</a></li>
-        </ul>
-      </div>
-    `;
+          <li><a href="#landingPage">Auction</a></li>
+        </ul>`;
+
+  toggle.addEventListener("click", function () {
+    navDropDown.classList.toggle("show");
+  });
+
+  const nav = document.createElement("nav");
+
+  nav.classList.add("nav-bar", navBarClass);
+
+  nav.innerHTML = `
+    <a href="#landingPage">
+      <img src="./assets/logo.png" alt="logo" />
+    </a>
+<h1 class="nav-bar--heading" id="artistName">${selectedArtist}</h1>`;
+
+  nav.appendChild(toggle);
+
+  wrapper.append(nav, navDropDown);
+  return wrapper;
 }

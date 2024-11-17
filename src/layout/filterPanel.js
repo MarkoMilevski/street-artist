@@ -5,6 +5,7 @@ import {
   populateItemTypes,
 } from "../utils/global.js";
 import { renderArtCards } from "../pages/visitor-listing-page/renderArtCards.js";
+import { fetchUsers } from "../utils/renderArtistOptions.js";
 
 const artistCards = document.querySelector("#artistCards");
 const filterButton = document.querySelector(".filterButton");
@@ -52,7 +53,7 @@ function filterItems() {
   const titleLowerCase = title.toLowerCase();
   const filteredItems = publishedItems.filter((item) => {
     return (
-      (title ? item.titleLowerCase.includes(titleLowerCase) : true) &&
+      (title ? item.title.toLowerCase().includes(titleLowerCase) : true) &&
       (artist ? item.artist === artist : true) &&
       (minPrice ? item.price >= minPrice : true) &&
       (maxPrice ? item.price <= maxPrice : true) &&
@@ -74,16 +75,7 @@ function populateArtist() {
 
   sortByArtist.appendChild(chooseOption);
 
-  fetch("https://jsonplaceholder.typicode.com/users")
-    .then((response) => response.json())
-    .then((data) => {
-      data.forEach((user) => {
-        const option = document.createElement("option");
-        option.textContent = user.name;
-        option.value = user.name;
-        sortByArtist.appendChild(option);
-      });
-    });
+  fetchUsers(sortByArtist);
 }
 
 applyFilter.addEventListener("click", filterItems);

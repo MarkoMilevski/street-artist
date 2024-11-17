@@ -1,0 +1,27 @@
+@use "../../../css/abstracts/variables" as style;
+@use "../../../css/abstracts/mixins" as mix;
+@use "sass:math";
+
+.chart-section {
+  padding: math.div(style.$gutter-base, 3);
+  background-color: style.$background-color-light;
+  height: calc(100vh - 379px);
+  display: flex;
+  flex-direction: column;
+
+  h4 {
+    color: style.$color-primary-default;
+    font-weight: 400;
+  }
+
+  .buttons-container {
+    display: flex;
+    justify-content: space-between;
+    button {
+      width: style.$gutter-base * 3;
+    }
+  }
+  canvas {
+    margin-top: style.$gutter-base;
+  }
+}

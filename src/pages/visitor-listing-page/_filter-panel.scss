@@ -1,0 +1,94 @@
+@use "../../../css/abstracts/variables" as style;
+@use "../../../css/abstracts/mixins" as mix;
+@use "sass:math";
+
+#filterPanel {
+  background-color: style.$color-primary-default;
+  height: calc(100vh - 70px);
+
+  display: none;
+
+  h4 {
+    font-size: style.$heading-size-big;
+  }
+
+  .filter-panel--inner {
+    padding: math.div(style.$gutter-base, 2);
+  }
+
+  .filter-panel--label {
+    color: style.$background-color-light;
+    font-weight: 300;
+    margin-bottom: math.div(style.$gutter-base, 3);
+  }
+  .heading-light {
+    color: style.$background-color-light;
+    margin-bottom: math.div(style.$gutter-base, 2);
+  }
+
+  .line {
+    width: 100%;
+    border: 1px solid style.$background-color-normal;
+    border-radius: 10px;
+    margin: style.$gutter-base 0;
+  }
+
+  .filter-panel--input {
+    background-color: transparent;
+    outline: none;
+    border: 1px solid style.$background-color-normal;
+    border-radius: 2px;
+    width: style.$gutter-base * 3;
+    padding-left: 8px;
+    caret-color: style.$background-color-normal;
+
+    color: style.$background-color-normal;
+
+    &::placeholder {
+      color: style.$background-color-light;
+    }
+  }
+
+  .sort-by-price {
+    label {
+      display: inline-block;
+      margin-right: math.div(style.$gutter-base, 3);
+    }
+  }
+
+  label {
+    display: block;
+  }
+  .filter-panel--select {
+    @include mix.dropdown(style.$background-color-light);
+    padding: 0 style.$gutter-base 0 math.div(style.$gutter-base, 4);
+    background-color: style.$color-primary-default;
+
+    outline: none;
+    border: 1px solid style.$background-color-light;
+    appearance: none;
+
+    cursor: pointer;
+    background-image: url("../../../assets/arrow-down.svg");
+    background-repeat: no-repeat;
+    background-position: right 7px center;
+    background-size: 12px;
+  }
+
+  .sort-by-price {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .filter-header {
+    display: flex;
+    justify-content: space-between;
+  }
+  .apply-filter {
+    position: fixed;
+    bottom: 0;
+    z-index: 999;
+    right: 0;
+    margin: math.div(style.$gutter-base, 3);
+  }
+}

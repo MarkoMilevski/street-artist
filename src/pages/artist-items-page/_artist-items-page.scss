@@ -1,0 +1,13 @@
+@use "../../../css/abstracts/variables" as style;
+@use "../../../css/abstracts/mixins" as mix;
+@use "sass:math";
+
+#artistItemsContainer {
+  background-color: style.$background-color-normal;
+  padding: style.$gutter-base 0;
+  height: calc(100vh - 70px);
+}
+
+#cardsContainer {
+  background-color: style.$background-color-normal;
+}

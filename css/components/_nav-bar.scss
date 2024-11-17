@@ -1,0 +1,93 @@
+@use "../abstracts/variables" as style;
+@use "../abstracts/mixins" as mix;
+@use "sass:math";
+
+.nav-bar {
+  background-color: style.$background-color-light;
+  height: 70px;
+  @include mix.box-shadow;
+
+  img {
+    width: 100px;
+    height: 100px;
+  }
+  .nav-bar--heading {
+    font-family: style.$heading-family-base;
+    color: style.$color-primary-default;
+    text-align: center;
+    margin: 0;
+    font-weight: 500;
+    font-size: style.$heading-size-big;
+  }
+}
+.landing-page--nav {
+  @include mix.align-center;
+}
+.visitor-homepage--nav {
+  @include mix.align-center;
+  .auction {
+    img {
+      width: 40px;
+      height: 40px;
+    }
+    @include mix.nav-bar--icon;
+  }
+}
+
+.artist-homepage--nav {
+  @include mix.align-center;
+  .hamburger-icon {
+    @include mix.nav-bar--icon;
+  }
+}
+.artist-items--nav {
+  @include mix.align-center;
+  .hamburger-icon {
+    @include mix.nav-bar--icon;
+  }
+}
+.add-new-item--nav {
+  @include mix.align-center;
+  .hamburger-icon {
+    @include mix.nav-bar--icon;
+  }
+}
+.capture-image--nav {
+  @include mix.align-center;
+  .hamburger-icon {
+    @include mix.nav-bar--icon;
+  }
+}
+
+.nav-bar--dropdown {
+  position: absolute;
+  z-index: 99;
+  top: 70px;
+  padding: style.$gutter-base * 2;
+  width: 100%;
+  height: 200px;
+  background-color: style.$color-primary-default;
+  @include mix.box-shadow;
+  @include mix.align-center;
+  display: none;
+
+  &.show {
+    display: flex;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+
+    margin: 0;
+    text-align: center;
+    li {
+      margin: 0 auto;
+    }
+  }
+  a {
+    color: style.$background-color-light;
+    text-decoration: none;
+    font-size: style.$heading-size-large;
+    font-weight: 300;
+  }
+}

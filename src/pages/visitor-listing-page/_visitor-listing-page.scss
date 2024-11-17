@@ -1,0 +1,23 @@
+@use "../../../css/abstracts/variables" as style;
+@use "../../../css/abstracts/mixins" as mix;
+@use "sass:math";
+
+#visitorListingPage {
+  background-color: style.$background-color-normal;
+  min-height: 100vh;
+
+  .artist-cards--container {
+    margin-top: style.$gutter-base;
+
+    &:empty {
+      margin-top: 0;
+    }
+  }
+  position: relative;
+  .filterButton {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: math.div(style.$gutter-base, 3);
+  }
+}

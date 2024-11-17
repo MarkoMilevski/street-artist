@@ -1,0 +1,48 @@
+@use "../abstracts/variables" as style;
+@use "../abstracts/mixins" as mix;
+@use "sass:math";
+
+.button-default {
+  @include mix.button-style(
+    style.$color-primary-default,
+    style.$background-color-light
+  );
+  @include mix.box-shadow;
+}
+
+.button-light {
+  @include mix.button-style(
+    style.$background-color-light,
+    style.$color-primary-default
+  );
+  @include mix.box-shadow;
+}
+
+.button-gray {
+  @include mix.button-style(
+    style.$background-color-gray,
+    style.$text-color-base
+  );
+  @include mix.box-shadow;
+}
+
+.button-blue {
+  @include mix.button-style(style.$color-primary-blue, style.$text-color-white);
+  @include mix.box-shadow;
+}
+
+.button-contrast {
+  @include mix.button-style(
+    style.$color-primary-contrast,
+    style.$background-color-light
+  );
+  @include mix.box-shadow;
+}
+
+.button-green {
+  @include mix.button-style(
+    style.$color-primary-green,
+    style.$text-color-white
+  );
+  @include mix.box-shadow;
+}

@@ -16,6 +16,11 @@ export function initArtistItemsPage() {
 }
 
 function initNavBar(header) {
+  const existingNavBar = header.querySelector(".nav-bar");
+
+  if (existingNavBar) {
+    existingNavBar.remove();
+  }
   const navBar = renderHeaderArtistPage();
   header.appendChild(navBar);
 }

@@ -242,9 +242,11 @@ a {
   background-color: #edd5bb;
   padding: 1.875rem 0;
 }
-.widgets-container .widgets-wrapper {
-  width: 90%;
-  margin: 0 auto;
+@media screen and (max-width: 425px) {
+  .widgets-container .widgets-wrapper {
+    width: 90%;
+    margin: 0 auto;
+  }
 }
 .widgets-container .widgets--inner {
   display: flex;
@@ -300,8 +302,12 @@ a {
 }
 .card .card-content {
   padding: 0.9375rem;
-  width: 95%;
-  margin: 0 auto;
+}
+@media screen and (max-width: 425px) {
+  .card .card-content {
+    width: 95%;
+    margin: 0 auto;
+  }
 }
 .card .card-content .card-heading {
   color: #a16a5e;
@@ -388,10 +394,14 @@ a {
   width: 100px;
 }
 #visitorHomePage .nav {
-  width: 90%;
-  margin: 0 auto;
   display: flex;
   align-items: center;
+}
+@media screen and (max-width: 425px) {
+  #visitorHomePage .nav {
+    width: 90%;
+    margin: 0 auto;
+  }
 }
 #visitorHomePage .fa-gavel {
   color: #a16a5e;
@@ -497,7 +507,7 @@ a {
   margin-top: -30px;
   border: solid 2px #a16a5e;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
 }
 #visitorHomePage #carousel p {
   font-size: 10px;
@@ -540,7 +550,7 @@ a {
   padding: 1.875rem;
   margin: 0 auto;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%);
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%);
   width: 250px;
   height: 250px;
   background-color: #edd5bb;
@@ -563,7 +573,7 @@ a {
   width: 250px;
   height: 250px;
   -webkit-clip-path: polygon(0 0, 100% 50%, 100% 100%, 0 100%);
-  clip-path: polygon(0 0, 100% 50%, 100% 100%, 0 100%);
+          clip-path: polygon(0 0, 100% 50%, 100% 100%, 0 100%);
   left: 50%;
   position: absolute;
   transform: translate(-50%, -50%);
@@ -658,8 +668,8 @@ a {
   outline: none;
   border: 1px solid #fcebd5;
   -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   cursor: pointer;
   background-image: url("../../../assets/arrow-down.svg");
   background-repeat: no-repeat;
@@ -702,9 +712,6 @@ a {
 }
 .chart-section canvas {
   margin-top: 1.875rem;
-  flex-grow: 1;
-  max-height: 100%;
-  height: 20px;
 }
 
 #artistItemsContainer {
@@ -756,7 +763,6 @@ a {
   color: #fcebd5;
   border: 1px solid #fcebd5;
   outline: none;
-  width: 180px;
   border-radius: 2px;
   height: 28px;
   background-color: #a16a5e;
@@ -786,12 +792,12 @@ a {
   font-weight: 200;
   display: inline-block;
 }
-.add-item-form .is-published input[type="checkbox"] {
+.add-item-form .is-published input[type=checkbox] {
   width: 10px;
   height: 10px;
   -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   padding: 10px;
   border: 1px solid #fcebd5;
   border-radius: 4px;
@@ -799,7 +805,7 @@ a {
   cursor: pointer;
   background-color: transparent;
 }
-.add-item-form .is-published input[type="checkbox"]:checked::after {
+.add-item-form .is-published input[type=checkbox]:checked::after {
   content: "";
   background: url("../../../assets/check.svg");
   background-size: cover;
@@ -858,7 +864,7 @@ a {
   box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.25);
   flex-grow: 1;
   -o-object-fit: fill;
-  object-fit: fill;
+     object-fit: fill;
   width: 100%;
 }
 .capture-container .camera-button {
@@ -868,4 +874,4 @@ a {
   font-size: 2.5rem;
   color: #fcebd5;
   margin-top: 0.9375rem;
-} /*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */

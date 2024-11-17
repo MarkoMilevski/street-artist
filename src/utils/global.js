@@ -56,4 +56,7 @@ export function populateItemTypes() {
 export function resetForm() {
   form.reset();
   form.querySelector("#isPublished").checked = true;
+
+  const captureImageDiv = document.querySelector("#captureImage");
+  captureImageDiv.innerHTML = `<span class="camera"><i class="fas fa-camera"></i></span><span>Take a snapshot</span>`;
 }

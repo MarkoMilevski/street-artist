@@ -15,9 +15,11 @@ export function initAddNewItemsPage() {
   console.log("Init Add new items page");
 
   const header = document.querySelector("#addNewItemPage header");
-  const navBar = renderHeaderArtistPage();
-  header.innerHTML = navBar;
+  header.innerHTML = "";
 
+  if (header) {
+    initNavBar(header);
+  }
   const selectedArtist = getArtist();
 
   const artistName = document.querySelector("#artistName");
@@ -35,12 +37,40 @@ export function initAddNewItemsPage() {
     createItem();
   }
 
+  updateFormTitle();
+
   const takeSnapshotButton = document.querySelector("#captureImage");
   if (takeSnapshotButton) {
     takeSnapshotButton.addEventListener("click", redirectToCamera);
   }
 
   renderCapturedImage();
+}
+
+function updateFormTitle() {
+  const formTitle = document.querySelector("#formTitle");
+  const addButton = document.querySelector("#addButton");
+
+  const editingItem = getEditingItem();
+
+  if (formTitle) {
+    formTitle.textContent = editingItem ? "Edit Item" : "Add New Item";
+  }
+
+  if (addButton) {
+    addButton.textContent = editingItem ? "Edit Item" : "Add Item";
+  }
+}
+
+function initNavBar(header) {
+  const existingNavBar = header.querySelector(".nav-bar");
+
+  if (existingNavBar) {
+    existingNavBar.remove();
+  }
+
+  const navBar = renderHeaderArtistPage();
+  header.appendChild(navBar);
 }
 
 function createItem() {
@@ -94,6 +124,7 @@ function populateItemTypes() {
 function cancelItem() {
   console.log("Canceled");
   resetForm();
+  clearEditingItem();
   location.hash = "#artistItemsPage";
 }
 
@@ -105,9 +136,17 @@ function redirectToCamera() {
 function renderCapturedImage() {
   const capturedImage = localStorage.getItem("capturedImage");
   const imageInput = document.querySelector("#imageUrl");
-  if (capturedImage) {
+  const editingItem = getEditingItem();
+
+  const imageSrc = editingItem ? editingItem.image : capturedImage;
+
+  if (imageSrc) {
     const captureImageDiv = document.querySelector("#captureImage");
-    captureImageDiv.innerHTML = `<img src="${capturedImage}" alt="Captured Image" class="captured-image"/>`;
-    imageInput.value = capturedImage;
+    captureImageDiv.innerHTML = `<img src="${imageSrc}" alt="Item Image" class="captured-image"/>`;
+    imageInput.value = imageSrc;
+  }
+
+  if (!editingItem) {
+    localStorage.removeItem("capturedImage");
   }
 }

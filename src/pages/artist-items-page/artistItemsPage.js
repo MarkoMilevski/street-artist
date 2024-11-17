@@ -17,12 +17,7 @@ export function initArtistItemsPage() {
 
 function initNavBar(header) {
   const navBar = renderHeaderArtistPage();
-  header.innerHTML = navBar;
-
-  const navToggle = document.querySelector("#navToggle");
-  if (navToggle) {
-    navToggle.addEventListener("click", handleNavBarclick);
-  }
+  header.appendChild(navBar);
 }
 
 export function renderArtistCards(selectedArtist) {

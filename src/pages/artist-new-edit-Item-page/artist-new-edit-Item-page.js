@@ -4,7 +4,6 @@ import { clearEditingItem, getEditingItem } from "../../utils/editMode.js";
 import {
   createDropdownOption,
   getArtist,
-  handleNavBarclick,
   resetForm,
 } from "../../utils/global.js";
 import { updateItem } from "../../utils/storage.js";
@@ -21,9 +20,6 @@ export function initAddNewItemsPage() {
 
   const selectedArtist = getArtist();
 
-  const navToggle = document.querySelector("#navToggle");
-  navToggle.addEventListener("click", handleNavBarclick);
-
   const artistName = document.querySelector("#artistName");
   if (artistName) {
     artistName.textContent = selectedArtist;
@@ -34,9 +30,9 @@ export function initAddNewItemsPage() {
 
   const editingItem = getEditingItem();
   if (editingItem) {
-    fillFormForEdit(editingItem); // Fill form with existing item data
+    fillFormForEdit(editingItem);
   } else {
-    createItem(); // Set up form for adding new item
+    createItem();
   }
 
   const takeSnapshotButton = document.querySelector("#captureImage");

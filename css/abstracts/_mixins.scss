@@ -2,7 +2,7 @@
 @use "sass:math";
 
 @mixin wrap($width) {
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 425px) {
     width: $width;
     margin: 0 auto;
   }

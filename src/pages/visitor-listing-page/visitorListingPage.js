@@ -4,8 +4,6 @@ import { getPublishedItems } from "../../utils/global.js";
 import { renderArtCards } from "./renderArtCards.js";
 
 export function initVisitorListingPage() {
-  console.log("Init visitor listing page");
-
   const publishedItems = getPublishedItems(items);
 
   renderArtCards(publishedItems);

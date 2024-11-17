@@ -16,13 +16,13 @@ export function initArtistItemsPage() {
 }
 
 function initNavBar(header) {
-  const navBar = renderHeaderArtistPage();
-  header.innerHTML = navBar;
+  const existingNavBar = header.querySelector(".nav-bar");
 
-  const navToggle = document.querySelector("#navToggle");
-  if (navToggle) {
-    navToggle.addEventListener("click", handleNavBarclick);
+  if (existingNavBar) {
+    existingNavBar.remove();
   }
+  const navBar = renderHeaderArtistPage();
+  header.appendChild(navBar);
 }
 
 export function renderArtistCards(selectedArtist) {

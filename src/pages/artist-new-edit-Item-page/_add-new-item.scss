@@ -42,7 +42,7 @@
 
   select {
     @include mix.dropdown(style.$background-color-light);
-    width: 180px;
+
     border-radius: 2px;
     height: 28px;
     background-color: style.$color-primary-default;

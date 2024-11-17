@@ -1,65 +1,63 @@
-@use "../abstracts/variables" as style;
-@use "../abstracts/mixins" as mix;
+@use "../../../css/abstracts/variables" as style;
+@use "../../../css/abstracts/mixins" as mix;
 @use "sass:math";
 
 #visitorHomePage {
-  @media screen and (max-width: 425px) {
-    height: 100vh;
-    background-color: style.$background-color-normal;
+  height: 100vh;
+  background-color: style.$background-color-normal;
 
-    .nav-bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background-color: style.$background-color-light;
-      h1 {
-        padding: 0;
-        font-size: style.$heading-size-big;
-      }
-      img {
-        width: 100px;
-      }
+  .nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: style.$background-color-light;
+    h1 {
+      padding: 0;
+      font-size: style.$heading-size-big;
     }
-    .nav {
-      @include mix.wrap(90%);
-
-      display: flex;
-      align-items: center;
+    img {
+      width: 100px;
     }
+  }
+  .nav {
+    @include mix.wrap(90%);
 
-    .fa-gavel {
+    display: flex;
+    align-items: center;
+  }
+
+  .fa-gavel {
+    color: style.$color-primary-default;
+    font-size: style.$heading-size-large;
+    padding-right: math.div(style.$gutter-base, 2);
+  }
+
+  .masterpiece-section {
+    background: url("../../assets/bricks.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #f5e3cb;
+
+    h2 {
+      flex-basis: 20%;
+      font-size: style.$heading-size-big;
+      font-family: style.$font-family-base;
       color: style.$color-primary-default;
-      font-size: style.$heading-size-large;
-      padding-right: math.div(style.$gutter-base, 2);
+      margin: 0;
     }
 
-    .masterpiece-section {
-      background: url("../../assets/bricks.png");
-      background-repeat: no-repeat;
-      background-position: center;
-      height: 20vh;
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      background-color: #f5e3cb;
-
-      h2 {
-        flex-basis: 20%;
-        font-size: style.$heading-size-big;
-        font-family: style.$font-family-base;
-        color: style.$color-primary-default;
-        margin: 0;
-      }
-
-      .primary-button {
-        padding: math.div(style.$gutter-base, 3);
-        background-color: style.$color-primary-default;
-        border: none;
-        color: style.$background-color-light;
-        font-weight: bold;
-        border-radius: 2px;
-        box-shadow: 0px 1px 1px 0px #00000040;
-      }
+    .primary-button {
+      padding: math.div(style.$gutter-base, 3);
+      background-color: style.$color-primary-default;
+      border: none;
+      color: style.$background-color-light;
+      font-weight: bold;
+      border-radius: 2px;
+      box-shadow: 0px 1px 1px 0px #00000040;
     }
   }
 

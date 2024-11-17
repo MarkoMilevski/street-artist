@@ -1,16 +1,14 @@
 import { items } from "../../../data/db.js";
 import { renderHeaderArtistPage } from "../../layout/renderHeaderArtist.js";
-import { getArtist, handleNavBarclick } from "../../utils/global.js";
+import { getArtist } from "../../utils/global.js";
 import { setupChartButtons } from "./chart.js";
 import { getArtistData } from "./getArtistData.js";
 
 export function initArtistHomePage() {
-  console.log("Init artist page");
-
   const homePageHeader = document.querySelector("#artistHomePage header");
-
+  homePageHeader.innerHTML = "";
   const navBar = renderHeaderArtistPage();
-  homePageHeader.innerHTML = navBar;
+  homePageHeader.appendChild(navBar);
   const selectedArtist = getArtist();
   const currentArtistItems = getItemsByArtist(selectedArtist);
 
@@ -20,9 +18,7 @@ export function initArtistHomePage() {
     getArtistData(selectedArtist);
 
   renderWidgets(totalSold, totalIncome, totalPublished);
-  console.log(currentArtistItems);
-  const navToggle = document.querySelector("#navToggle");
-  navToggle.addEventListener("click", handleNavBarclick);
+
   document.querySelector("#artistName").textContent = selectedArtist;
 }
 

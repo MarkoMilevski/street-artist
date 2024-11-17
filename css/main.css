@@ -34,225 +34,6 @@ a {
   text-decoration: none;
 }
 
-@media screen and (max-width: 420px) {
-  .heading {
-    text-align: center;
-    padding: 0.9375rem;
-    font-size: 2.5rem;
-    color: #a16a5e;
-    font-weight: 500;
-    margin-bottom: 1px;
-  }
-  #landingPage {
-    height: 100vh;
-    background-color: #fcebd5;
-  }
-  #landingPage .navBar {
-    background-color: #fcebd5;
-    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.2509803922);
-  }
-  #landingPage .landing-section .logo {
-    text-align: center;
-    padding-top: 1.875rem;
-  }
-  #landingPage .landing-section .join-section {
-    margin-top: 3.75rem;
-  }
-  #landingPage .landing-section .join-section .join-as-artist {
-    padding: 1.875rem;
-    margin: 0 auto;
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%);
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%);
-    width: 250px;
-    height: 250px;
-    background-color: #edd5bb;
-    transition: transform 0.3s ease;
-    position: relative;
-    z-index: 2;
-  }
-  #landingPage .landing-section .join-section .join-as-artist h2 {
-    font-family: "Reenie Beanie", cursive;
-    text-align: center;
-    font-size: 2.5rem;
-    color: #a16a5e;
-  }
-  #landingPage .landing-section .join-section .join-as-artist:hover {
-    transform: scale(1.1);
-  }
-  #landingPage .landing-section .join-section .join-as-visitor {
-    transition: transform 300ms ease-out;
-    background-color: #e09686;
-    width: 250px;
-    height: 250px;
-    -webkit-clip-path: polygon(0 0, 100% 50%, 100% 100%, 0 100%);
-    clip-path: polygon(0 0, 100% 50%, 100% 100%, 0 100%);
-    left: 50%;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.8941176471);
-  }
-  #landingPage .landing-section .join-section .join-as-visitor h2 {
-    font-family: "Reenie Beanie", cursive;
-    text-align: center;
-    font-size: 2.5rem;
-    padding-top: 9.375rem;
-    color: #fcebd5;
-  }
-  #landingPage .landing-section .join-section .join-as-visitor:hover {
-    z-index: 2;
-    transform: translate(-50%, -50%) scale(1.1);
-  }
-}
-@media screen and (max-width: 425px) {
-  #visitorHomePage {
-    height: 100vh;
-    background-color: #edd5bb;
-  }
-  #visitorHomePage .nav-bar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #fcebd5;
-  }
-  #visitorHomePage .nav-bar h1 {
-    padding: 0;
-    font-size: 1.875rem;
-  }
-  #visitorHomePage .nav-bar img {
-    width: 100px;
-  }
-  #visitorHomePage .nav {
-    display: flex;
-    align-items: center;
-  }
-}
-@media screen and (max-width: 425px) and (max-width: 420px) {
-  #visitorHomePage .nav {
-    width: 90%;
-    margin: 0 auto;
-  }
-}
-@media screen and (max-width: 425px) {
-  #visitorHomePage .fa-gavel {
-    color: #a16a5e;
-    font-size: 2.5rem;
-    padding-right: 0.9375rem;
-  }
-  #visitorHomePage .masterpiece-section {
-    background: url("../../assets/bricks.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 20vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    background-color: #f5e3cb;
-  }
-  #visitorHomePage .masterpiece-section h2 {
-    flex-basis: 20%;
-    font-size: 1.875rem;
-    font-family: "Roboto", sans-serif;
-    color: #a16a5e;
-    margin: 0;
-  }
-  #visitorHomePage .masterpiece-section .primary-button {
-    padding: 0.625rem;
-    background-color: #a16a5e;
-    border: none;
-    color: #fcebd5;
-    font-weight: bold;
-    border-radius: 2px;
-    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.2509803922);
-  }
-}
-@keyframes slideLeft {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-}
-@keyframes slideRight {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-#visitorHomePage .gallery {
-  overflow: hidden;
-  white-space: nowrap;
-  margin-top: 1.875rem;
-}
-#visitorHomePage .gallery img {
-  height: 120px;
-  margin: 0 0.625rem;
-}
-#visitorHomePage .gallery .gallery-slide {
-  animation: 8s slideLeft infinite linear;
-}
-#visitorHomePage .gallery .gallery-slide-2 {
-  animation: 8s slideRight infinite linear;
-}
-#visitorHomePage #carousel .carousel-container {
-  height: 260px;
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  justify-content: space-around;
-}
-#visitorHomePage #carousel .carousel-item--left {
-  display: flex;
-  border-right: solid 2px #a16a5e;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  width: 50%;
-  height: 200px;
-}
-#visitorHomePage #carousel .carousel-item--left .carousel-container--left {
-  width: 100px;
-  height: 120px;
-  background-color: #a16a5e;
-  color: #fcebd5;
-}
-#visitorHomePage #carousel .carousel-item--right {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 50%;
-  height: 200px;
-}
-#visitorHomePage #carousel .carousel-item--right .carousel-container--right {
-  width: 100px;
-  color: #a16a5e;
-  height: 120px;
-}
-#visitorHomePage #carousel img {
-  width: 60px;
-  height: 60px;
-  border-radius: 30px;
-  margin-top: -30px;
-  border: solid 2px #a16a5e;
-  -o-object-fit: cover;
-  object-fit: cover;
-}
-#visitorHomePage #carousel p {
-  font-size: 10px;
-  text-align: center;
-}
-#visitorHomePage #carousel .second-slide .carousel-container--right {
-  background-color: #a16a5e;
-  color: #fcebd5;
-}
-#visitorHomePage #carousel .second-slide .carousel-container--left {
-  background-color: transparent;
-  color: #a16a5e;
-}
-
 .button-default {
   background-color: #a16a5e;
   border-radius: 2px;
@@ -461,7 +242,7 @@ a {
   background-color: #edd5bb;
   padding: 1.875rem 0;
 }
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 425px) {
   .widgets-container .widgets-wrapper {
     width: 90%;
     margin: 0 auto;
@@ -491,7 +272,7 @@ a {
   font-size: 1.875rem;
 }
 .widgets-container .widget-auction {
-  padding: 0.9375rem 0;
+  padding: 0.9375rem;
   text-align: center;
   margin-top: 1.875rem;
   background-color: #d44c2e;
@@ -522,7 +303,7 @@ a {
 .card .card-content {
   padding: 0.9375rem;
 }
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 425px) {
   .card .card-content {
     width: 95%;
     margin: 0 auto;
@@ -593,6 +374,221 @@ a {
   color: #a16a5e;
   text-align: center;
   font-size: 1.875rem;
+}
+
+#visitorHomePage {
+  height: 100vh;
+  background-color: #edd5bb;
+}
+#visitorHomePage .nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fcebd5;
+}
+#visitorHomePage .nav-bar h1 {
+  padding: 0;
+  font-size: 1.875rem;
+}
+#visitorHomePage .nav-bar img {
+  width: 100px;
+}
+#visitorHomePage .nav {
+  display: flex;
+  align-items: center;
+}
+@media screen and (max-width: 425px) {
+  #visitorHomePage .nav {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+#visitorHomePage .fa-gavel {
+  color: #a16a5e;
+  font-size: 2.5rem;
+  padding-right: 0.9375rem;
+}
+#visitorHomePage .masterpiece-section {
+  background: url("../../assets/bricks.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #f5e3cb;
+}
+#visitorHomePage .masterpiece-section h2 {
+  flex-basis: 20%;
+  font-size: 1.875rem;
+  font-family: "Roboto", sans-serif;
+  color: #a16a5e;
+  margin: 0;
+}
+#visitorHomePage .masterpiece-section .primary-button {
+  padding: 0.625rem;
+  background-color: #a16a5e;
+  border: none;
+  color: #fcebd5;
+  font-weight: bold;
+  border-radius: 2px;
+  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.2509803922);
+}
+@keyframes slideLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+@keyframes slideRight {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+#visitorHomePage .gallery {
+  overflow: hidden;
+  white-space: nowrap;
+  margin-top: 1.875rem;
+}
+#visitorHomePage .gallery img {
+  height: 120px;
+  margin: 0 0.625rem;
+}
+#visitorHomePage .gallery .gallery-slide {
+  animation: 8s slideLeft infinite linear;
+}
+#visitorHomePage .gallery .gallery-slide-2 {
+  animation: 8s slideRight infinite linear;
+}
+#visitorHomePage #carousel .carousel-container {
+  height: 260px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+}
+#visitorHomePage #carousel .carousel-item--left {
+  display: flex;
+  border-right: solid 2px #a16a5e;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 50%;
+  height: 200px;
+}
+#visitorHomePage #carousel .carousel-item--left .carousel-container--left {
+  width: 100px;
+  height: 120px;
+  background-color: #a16a5e;
+  color: #fcebd5;
+}
+#visitorHomePage #carousel .carousel-item--right {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 200px;
+}
+#visitorHomePage #carousel .carousel-item--right .carousel-container--right {
+  width: 100px;
+  color: #a16a5e;
+  height: 120px;
+}
+#visitorHomePage #carousel img {
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  margin-top: -30px;
+  border: solid 2px #a16a5e;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#visitorHomePage #carousel p {
+  font-size: 10px;
+  text-align: center;
+}
+#visitorHomePage #carousel .second-slide .carousel-container--right {
+  background-color: #a16a5e;
+  color: #fcebd5;
+}
+#visitorHomePage #carousel .second-slide .carousel-container--left {
+  background-color: transparent;
+  color: #a16a5e;
+}
+
+.heading {
+  text-align: center;
+  padding: 0.9375rem;
+  font-size: 2.5rem;
+  color: #a16a5e;
+  font-weight: 500;
+  margin-bottom: 1px;
+}
+
+#landingPage {
+  height: 100vh;
+  background-color: #fcebd5;
+}
+#landingPage .navBar {
+  background-color: #fcebd5;
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.2509803922);
+}
+#landingPage .landing-section .logo {
+  text-align: center;
+  padding-top: 1.875rem;
+}
+#landingPage .landing-section .join-section {
+  margin-top: 3.75rem;
+}
+#landingPage .landing-section .join-section .join-as-artist {
+  padding: 1.875rem;
+  margin: 0 auto;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%);
+  width: 250px;
+  height: 250px;
+  background-color: #edd5bb;
+  transition: transform 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+#landingPage .landing-section .join-section .join-as-artist h2 {
+  font-family: "Reenie Beanie", cursive;
+  text-align: center;
+  font-size: 2.5rem;
+  color: #a16a5e;
+}
+#landingPage .landing-section .join-section .join-as-artist:hover {
+  transform: scale(1.1);
+}
+#landingPage .landing-section .join-section .join-as-visitor {
+  transition: transform 300ms ease-out;
+  background-color: #e09686;
+  width: 250px;
+  height: 250px;
+  -webkit-clip-path: polygon(0 0, 100% 50%, 100% 100%, 0 100%);
+          clip-path: polygon(0 0, 100% 50%, 100% 100%, 0 100%);
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.8941176471);
+}
+#landingPage .landing-section .join-section .join-as-visitor h2 {
+  font-family: "Reenie Beanie", cursive;
+  text-align: center;
+  font-size: 2.5rem;
+  padding-top: 9.375rem;
+  color: #fcebd5;
+}
+#landingPage .landing-section .join-section .join-as-visitor:hover {
+  z-index: 2;
+  transform: translate(-50%, -50%) scale(1.1);
 }
 
 #visitorListingPage {
@@ -672,8 +668,8 @@ a {
   outline: none;
   border: 1px solid #fcebd5;
   -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   cursor: pointer;
   background-image: url("../../../assets/arrow-down.svg");
   background-repeat: no-repeat;
@@ -696,32 +692,28 @@ a {
   margin: 0.625rem;
 }
 
-@media screen and (max-width: 425px) {
-  .chart-section {
-    padding: 0.625rem;
-    background-color: #fcebd5;
-    height: calc(100vh - 379px);
-    display: flex;
-    flex-direction: column;
-  }
-  .chart-section h4 {
-    color: #a16a5e;
-    font-weight: 400;
-  }
-  .chart-section .buttons-container {
-    display: flex;
-    justify-content: space-between;
-  }
-  .chart-section .buttons-container button {
-    width: 100px;
-  }
-  .chart-section canvas {
-    margin-top: 1.875rem;
-    flex-grow: 1;
-    max-height: 100%;
-    height: auto;
-  }
+.chart-section {
+  padding: 0.625rem;
+  background-color: #fcebd5;
+  height: calc(100vh - 379px);
+  display: flex;
+  flex-direction: column;
 }
+.chart-section h4 {
+  color: #a16a5e;
+  font-weight: 400;
+}
+.chart-section .buttons-container {
+  display: flex;
+  justify-content: space-between;
+}
+.chart-section .buttons-container button {
+  width: 5.625rem;
+}
+.chart-section canvas {
+  margin-top: 1.875rem;
+}
+
 #artistItemsContainer {
   background-color: #edd5bb;
   padding: 1.875rem 0;
@@ -771,7 +763,6 @@ a {
   color: #fcebd5;
   border: 1px solid #fcebd5;
   outline: none;
-  width: 180px;
   border-radius: 2px;
   height: 28px;
   background-color: #a16a5e;
@@ -801,12 +792,12 @@ a {
   font-weight: 200;
   display: inline-block;
 }
-.add-item-form .is-published input[type="checkbox"] {
+.add-item-form .is-published input[type=checkbox] {
   width: 10px;
   height: 10px;
   -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   padding: 10px;
   border: 1px solid #fcebd5;
   border-radius: 4px;
@@ -814,7 +805,7 @@ a {
   cursor: pointer;
   background-color: transparent;
 }
-.add-item-form .is-published input[type="checkbox"]:checked::after {
+.add-item-form .is-published input[type=checkbox]:checked::after {
   content: "";
   background: url("../../../assets/check.svg");
   background-size: cover;
@@ -873,7 +864,7 @@ a {
   box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.25);
   flex-grow: 1;
   -o-object-fit: fill;
-  object-fit: fill;
+     object-fit: fill;
   width: 100%;
 }
 .capture-container .camera-button {
@@ -883,4 +874,4 @@ a {
   font-size: 2.5rem;
   color: #fcebd5;
   margin-top: 0.9375rem;
-} /*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */

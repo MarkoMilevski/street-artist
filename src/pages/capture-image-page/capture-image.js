@@ -2,8 +2,6 @@ import { renderHeaderArtistPage } from "../../layout/renderHeaderArtist.js";
 import { handleNavBarclick } from "../../utils/global.js";
 
 export function initCaptureImagePage() {
-  console.log("Init capture image page");
-
   const header = document.querySelector("#captureImagePage header");
   if (header) {
     initNavBar(header);
@@ -51,6 +49,5 @@ function handleCaptureImage() {
   const imageData = captureCanvas.toDataURL("image/png");
   localStorage.setItem("capturedImage", imageData);
 
-  console.log(imageData);
   location.hash = "#addNewItemPage";
 }

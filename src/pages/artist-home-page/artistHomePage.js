@@ -5,8 +5,6 @@ import { setupChartButtons } from "./chart.js";
 import { getArtistData } from "./getArtistData.js";
 
 export function initArtistHomePage() {
-  console.log("Init artist page");
-
   const homePageHeader = document.querySelector("#artistHomePage header");
   homePageHeader.innerHTML = "";
   const navBar = renderHeaderArtistPage();
@@ -20,7 +18,7 @@ export function initArtistHomePage() {
     getArtistData(selectedArtist);
 
   renderWidgets(totalSold, totalIncome, totalPublished);
-  console.log(currentArtistItems);
+
   document.querySelector("#artistName").textContent = selectedArtist;
 }
 

@@ -34,11 +34,10 @@ export function renderHeaderArtistPage() {
         <ul>
           <li><a href="#artistHomePage">Home</a></li>
           <li><a href="#artistItemsPage">Items</a></li>
-          <li><a href="#visitorHomePage">Auction</a></li>
+          <li><a href="#landingPage">Auction</a></li>
         </ul>`;
 
   toggle.addEventListener("click", function () {
-    console.log("toggle click");
     navDropDown.classList.toggle("show");
   });
 

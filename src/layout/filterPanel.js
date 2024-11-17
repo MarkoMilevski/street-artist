@@ -61,8 +61,6 @@ function filterItems() {
     );
   });
 
-  console.log(publishedItems);
-  console.log(filteredItems);
   renderArtCards(filteredItems);
   filterPanel.style.display = "none";
   filterButton.style.display = "block";

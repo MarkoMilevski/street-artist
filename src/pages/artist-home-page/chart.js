@@ -33,10 +33,7 @@ export function drawChart(daysAgo, selectedArtist) {
     (item) => item.artist === selectedArtist && !!item.priceSold
   );
 
-  console.log("artistItems: ", artistItems);
-
   const data = getChartData(artistItems, labels);
-  console.log(data);
 
   if (chartInstance) {
     chartInstance.data.labels = labels;

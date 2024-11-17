@@ -12,8 +12,6 @@ import { createAndAddItem, getValuesFromForm } from "./add-item.js";
 import { fillFormForEdit } from "./edit-item.js";
 
 export function initAddNewItemsPage() {
-  console.log("Init Add new items page");
-
   const header = document.querySelector("#addNewItemPage header");
   header.innerHTML = "";
 
@@ -94,7 +92,6 @@ function handleFormSubmit(event) {
   event.preventDefault();
 
   const editingItem = getEditingItem();
-  console.log(editingItem, "Editing item");
 
   if (editingItem) {
     const updatedItem = getValuesFromForm(editingItem);
@@ -122,7 +119,6 @@ function populateItemTypes() {
 }
 
 function cancelItem() {
-  console.log("Canceled");
   resetForm();
   clearEditingItem();
   location.hash = "#artistItemsPage";

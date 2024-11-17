@@ -1,0 +1,35 @@
+@use "../abstracts/variables" as style;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: style.$font-family-base;
+}
+
+h1,
+h2,
+h3 {
+  font-family: style.$heading-family-base;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+  margin-top: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}

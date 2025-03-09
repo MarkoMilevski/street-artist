@@ -1,92 +1,56 @@
-# Second_Project_Marko_Milevski_FE19
+# Street ARTists
+
+Street ARTists is a **mobile web app** designed to help street artists manage their careers by providing them with tools to track their income, showcase their art, and engage with potential buyers and visitors. The platform includes various features such as income tracking, artist profile pages, and a visitor marketplace for discovering and purchasing art.
+
+## Demo
+
+You can view the live demo of the **Street ARTists** mobile web app here:
+
+[Street ARTists Live Demo](https://street-artist-rho.vercel.app/)
+
+To experience the platform in its mobile-friendly format, open the link on your mobile device or use the browser's developer tools to simulate a mobile view.
+## Technologies used
+ 
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+
+![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+
+![SASS](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)
+
+![JavaScript](https://camo.githubusercontent.com/9bbd4c2b5f7cda139d91d34caa14392df56353ca55e19b58184610aa8b123854/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4a6176615363726970742d3332333333303f7374796c653d666f722d7468652d6261646765266c6f676f3d6a617661736372697074266c6f676f436f6c6f723d463744463145)
+
+## Acknowledgements
+
+- [Font Awesome](https://fontawesome.com/) for the icons.
+- [Chart.js](https://www.chartjs.org/) for the charting library.
+- [SASS](https://sass-lang.com/) for making CSS more maintainable.
+
+## Features
+
+- **Income Tracking**: Artists can track their earnings from different performances and artworks.
+- **Artist Profile Pages**: A dedicated space to showcase and manage artwork.
+- **Visitor Marketplace**: Visitors can browse and purchase artwork from various artists.
 
 
+## Pages Overview
 
-## Getting started
+1. **Landing Page**
+   - Main entry point where users can choose to join as either an Artist or Visitor.
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+2. **Artists Home Page**
+   - Displays the artist's dashboard with current stats, including total items sold, total income, and charts.
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+3. **Artists Items**
+   - Lists the artist's items with actions to publish/unpublish, edit, remove, or send to auction (auction functionality excluded).
 
-## Add your files
+4. **Visitor Home Page**
+   - Visitors are redirected here after joining. Contains a banner, sliders, and carousel for exploring items.
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+5. **Visitor Listing**
+   - Visitors can browse items from artists with filtering options (by name, artist, price, type) and item details.
 
-```
-cd existing_repo
-git remote add origin https://git.brainster.co/Marko.Milevski-FE19/second_project_marko_milevski_fe19.git
-git branch -M main
-git push -uf origin main
-```
+6. **Artist - New/Edit Item**
+   - A page for artists to add or edit their items (with fields for title, description, price, image, etc.).
 
-## Integrate with your tools
-
-- [ ] [Set up project integrations](https://git.brainster.co/Marko.Milevski-FE19/second_project_marko_milevski_fe19/-/settings/integrations)
-
-## Collaborate with your team
-
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Automatically merge when pipeline succeeds](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
-
-## Test and Deploy
-
-Use the built-in continuous integration in GitLab.
-
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
-
-***
-
-# Editing this README
-
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thank you to [makeareadme.com](https://www.makeareadme.com/) for this template.
-
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
-
-## Name
-Choose a self-explaining name for your project.
-
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
-
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
-
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
-
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
-
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
-
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
-
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
-
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
-
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
-
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+7. **Artist - Capture Image Popup**
+   - Allows artists to capture images of their artwork directly from their device.

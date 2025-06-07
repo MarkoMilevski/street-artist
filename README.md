@@ -6,7 +6,7 @@ Street ARTists is a **mobile web app** designed to help street artists manage th
 
 You can view the live demo of the **Street ARTists** mobile web app here:
 
-[Street ARTists Live Demo](https://street-artist-rho.vercel.app/)
+[Street ARTists Live Demo](https://street-artist-six.vercel.app)
 
 To experience the platform in its mobile-friendly format, open the link on your mobile device or use the browser's developer tools to simulate a mobile view.
 ## Technologies used
